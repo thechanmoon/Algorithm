@@ -22,9 +22,12 @@ class BubbleSort {
     }
 
     public void swap(int i1, int i2) {
-        array[i1] = array[i1] + array[i2];
-        array[i2] = array[i1] - array[i2];
-        array[i1] = array[i1] - array[i2];
+        int temp = array[i1];
+        array[i1] = array[i2];
+        array[i2] = temp;
+        // array[i1] = array[i1] + array[i2];
+        // array[i2] = array[i1] - array[i2];
+        // array[i1] = array[i1] - array[i2];
     }
 
     static int[] sort(int[] a) {

@@ -15,15 +15,14 @@ class Test {
         // System.out.println("Test");
         int[] arr = { 3, 5, 4, 2, 1 };
 
-        // BubbleSort bs = new BubbleSort(arr);
-        // int[] temp = bs.sort();
+        BubbleSort bs = new BubbleSort(arr);
 
-        // for (int n : temp) {
-        // System.out.println(n);
-        // }
-
-        for (int n : BubbleSort.sort(arr)) {
+        for (int n : bs.sort()) {
             System.out.println(n);
         }
+
+        // for (int n : BubbleSort.sort(arr)) {
+        // System.out.println(n);
+        // }
     }
 }
