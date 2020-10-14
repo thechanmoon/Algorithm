@@ -12,17 +12,28 @@ class Test {
         // System.out.print(p.row + "" + p.col + " -> ");
         // }
         // }
+        
         // System.out.println("Test");
-        int[] arr = { 3, 5, 4, 2, 1 };
+        // int[] arr = { 3, 5, 4, 2, 1 };
 
-        BubbleSort bs = new BubbleSort(arr);
+        // BubbleSort bs = new BubbleSort(arr);
 
-        for (int n : bs.sort()) {
-            System.out.println(n);
-        }
+        // for (int n : bs.sort()) {
+        //     System.out.println(n);
+        // }
 
         // for (int n : BubbleSort.sort(arr)) {
         // System.out.println(n);
         // }
+       char[][] path =  
+        {{'O', 'O', 'O', 'O'},
+        {'D', 'O', 'D', 'O'},
+        {'O', 'O', 'O', 'O'},
+        {'X', 'D', 'D', 'O'}} ;
+
+        TreasureIsland ts = new TreasureIsland();
+        System.out.println(ts.minStep(path)+" ");
+        // System.out.println(ts.isSafe(path,0,4));
+        
     }
 }
