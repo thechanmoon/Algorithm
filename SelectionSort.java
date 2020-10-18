@@ -23,11 +23,10 @@ class SelectionSort
             {
                 if(array[i]<array[min_index])
                 {
-                    
-                    swap(array,i,min_index);
                     min_index = i;
                 }
             }
+            swap(array,start,min_index);
             sort(array,start+1);
         }
         return array;
@@ -47,7 +46,9 @@ class SelectionSort
     }
 
     public static void main(String[] args) {
-        int[] array = {3,6,1,8,2,4};
+        // int[] array = {3,6,1,8,2,4};
+        int[] array = {3,5,4,2,1};
+
         print(array);
         sort(array);
         print(array);
