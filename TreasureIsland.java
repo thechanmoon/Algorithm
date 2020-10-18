@@ -10,68 +10,59 @@ class Point{
 }
 class TreasureIsland{
 
-    static byte[][] DIR = {{1,0},{0,1},{-1,0},{0,-1}};
-    // public TreasureIsland()
-    // {
-
-    // }
-
-    public static int minStep(char[][] path)
+    static byte[][] DIR = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
+    
+    public static int minStepsBFS(char[][] path)
     {
-        int step = 0;
+        int step = 1;
         Queue <Point> q = new ArrayDeque<Point>();
         q.add(new Point(0,0));
-        path[0][0] = 'D'; 
+        path[0][0] = 'D';
+
         while(!q.isEmpty())
         {
-            Point point = q.poll();
+            int size = q.size();
+		    for (int i = 0; i < size; i++) {
+                Point point = q.poll();
 
-            if(isSafe(path,point.r,point.c ) && path[point.r][point.c] == 'X')
-                return step;     
 
-            if(isSafe(path,point.r, point.c))
-            {
-                for(int i = 0; i < DIR.length; i++)
+                for(int j = 0; j < DIR.length; j++)
                 {
-                    int r = point.r+DIR[i][0];
-                    int c = point.c+DIR[i][1];
-
-
-
-                    // System.out.println("path[r][c]: " + path[r][c]);
-
-                    if(isSafe(path,r,c )&&path[r][c] != 'D')
+                    int r = point.r+DIR[j][0];
+                    int c = point.c+DIR[j][1];
+    
+                    if(isSafe(path,r,c ))
                     {
                         System.out.println("point.r: " + point.r);
                         System.out.println("point.c: " + point.c);
-                        System.out.println("r: " + r);
-                        System.out.println("c: " + c);
+                        System.out.print(r + " , " + c + " ");
+                        // System.out.println("c: " + c);
                         // System.out.println("isSafe(path,r,c ): " + isSafe(path,r,c ));
-
+                        if(path[r][c] == 'X')
+                            return step;     
                         q.add(new Point(r,c));
                         path[r][c] = 'D';
                         System.out.println("point added");
-                        System.out.println(step + "============");
-                    }else
-                    {
-                        // System.out.println("point not added");
+                        
                     }
                 }
+                System.out.println(step + "============");
+            
             }
-            // System.out.println("size()" + q.size());
             step++;
         }
-        return step;
+        return -1;
     } 
 
     static boolean isSafe(char[][] path, int r, int c)
     {
-        if(r >= 0 && r < path.length && c >=0 && c <path[r].length)
+        if(r >= 0 && r < path.length && c >=0 && c <path[r].length && path[r][c] != 'D')
             return true;
         return false;    
     } 
-    
-       public static void main(String[] args) {
+
+    public static void main(String[] args) {
+
         // boolean[][] grid = { { false, false, false, false }, { false, false, false,
         // true },
         // { true, true, false, false }, { false, false, false, false } };
@@ -95,13 +86,11 @@ class TreasureIsland{
         // for (int n : BubbleSort.sort(arr)) {
         // System.out.println(n);
         // }
-       char[][] path =  
+        char[][] path =  
         {{'O', 'O', 'O', 'O'},
         {'D', 'O', 'D', 'O'},
         {'O', 'O', 'O', 'O'},
         {'X', 'D', 'D', 'O'}} ;
-        System.out.println(minStep(path)+" ");
-        // System.out.println(ts.isSafe(path,0,4));
-        
+        System.out.println("minStep(path): "+minStepsBFS(path)+" ");
     }
 }
