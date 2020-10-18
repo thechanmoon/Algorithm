@@ -50,7 +50,7 @@ class NumberOfIslands {
                     DFS(M, i, j, visited); 
                     ++count; 
                 } 
-  
+                
         return count; 
     } 
   
