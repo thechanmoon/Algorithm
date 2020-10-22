@@ -51,10 +51,8 @@ class NumberOfIslands {
 
         // for (int i = 0; i < n; i++) {
         //     arr[i] = Array.ConvertAll(Console.ReadLine().Split(' '), arrTemp => Convert.ToInt32(arrTemp));
-        // }
-        
+        // }      
         int [][] M1 = new int[6][];
-
         M1[0] = new int[] { 0, 80, 45, 95, 170, 145 };
         M1[1] = new int[] { 115, 210, 60, 5, 230,230 };
         M1[2] = new int[] { 5, 0, 145, 250, 245, 140 };
@@ -68,7 +66,6 @@ class NumberOfIslands {
         //     { 0, 5, 95, 115, 165, 250 },
         //     { 5, 0, 25, 5, 145, 250 }
         //     };
-
         System.Console.WriteLine(numIsland(M1,200));
     }
 }
