@@ -21,13 +21,18 @@ class DupulicateArray {
         // }
         // sc.close();
         int[] a = {17,27,11,23,14,29,17,24,3,6,18,8,18,16,29,11,24,5,0,1,28,3,28,4,13,7,7,27,10,21};    
+        int[] aa = { 17, 27, 11, 23, 14, 29, 17, 24, 3, 6, 18, 8, 18, 16, 29, 11, 24, 5, 0, 1, 28, 3, 28, 4, 13, 7, 7,
+                27, 10, 21 };
         // int[] a = { 1, 2, 3, 1, 3, 9, 9, 4, 5, 5 };    
         Solution g = new Solution();
         ArrayList<Integer> ans = g.duplicates(a, a.length);
-        System.out.println("ans.size(): " + ans.size());
-        System.out.println("a.size(): " + a.length);
-        for (Integer val : ans) System.out.print(val + " ");
+        // System.out.println("ans.size(): " + ans.size());
+        // System.out.println("a.size(): " + a.length);
+        for (Integer val : ans)
+            System.out.print(val + " ");
         System.out.println();
+
+        g.printRepeating(aa, aa.length);
     }
 }
 // } Driver Code Ends
@@ -59,5 +64,17 @@ class Solution {
             Collections.sort(list);
         }
         return list;
+    }
+
+    void printRepeating(int arr[], int size) {
+        int i;
+        System.out.println("The repeating elements are : ");
+
+        for (i = 0; i < size; i++) {
+            if (arr[Math.abs(arr[i])] >= 0)
+                arr[Math.abs(arr[i])] = -arr[Math.abs(arr[i])];
+            else
+                System.out.print(Math.abs(arr[i]) + " ");
+        }
     }
 }
