@@ -6,7 +6,7 @@ var findDuplicates = function(nums) {
         let index = Math.abs(nums[i])-1;
         if(nums[index] < 0)
         {
-            list.push(index+1);
+            list.push(Math.abs(nums[i]));
         }else
         {
             nums[index] = -nums[index];
