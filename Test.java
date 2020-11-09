@@ -25,15 +25,25 @@ class Test {
         // for (int n : BubbleSort.sort(arr)) {
         // System.out.println(n);
         // }
-       char[][] path =  
-        {{'O', 'O', 'O', 'O'},
-        {'D', 'O', 'D', 'O'},
-        {'O', 'O', 'O', 'O'},
-        {'X', 'D', 'D', 'O'}} ;
+        // char[][] path =
+        // {{'O', 'O', 'O', 'O'},
+        // {'D', 'O', 'D', 'O'},
+        // {'O', 'O', 'O', 'O'},
+        // {'X', 'D', 'D', 'O'}} ;
 
-        TreasureIsland ts = new TreasureIsland();
-        System.out.println(ts.minStep(path)+" ");
+        // TreasureIsland ts = new TreasureIsland();
+        // System.out.println(ts.minStep(path)+" ");
         // System.out.println(ts.isSafe(path,0,4));
-        
+
+        // CompressString sl = new CompressString();
+        // String str = sl.compressString("testtest");
+        // System.out.println(str);
+
+        // str = sl.compressString("aaaaabbbbbeeeehhh");
+        // System.out.println(str);
+
+        Palindrome pd = new Palindrome();
+        System.out.println(pd.isPermutationOfPalidrome("taco cat"));
+
     }
 }
