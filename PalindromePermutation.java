@@ -25,7 +25,7 @@ class Palindrome{
                 }
             }
         }         
-        
+
         return oddCount <= 1;
     }
 

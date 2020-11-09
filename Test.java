@@ -43,7 +43,9 @@ class Test {
         // System.out.println(str);
 
         Palindrome pd = new Palindrome();
-        System.out.println(pd.isPermutationOfPalidrome("taco caT"));
+        // System.out.println(pd.isPermutationOfPalidrome("taco caT"));
+        System.out.println(pd.isPalidrome("taco caT"));
+        System.out.println(pd.isPalidrome("taco cat"));
 
     }
 }
