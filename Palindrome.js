@@ -2,11 +2,12 @@ const isPalindrome = (str) =>
 {
     const charCount = {} 
 
-    for (let i = 0; i < str.length; i++) {       
-        if((str[i].charCodeAt() & 255) < ('a'.charCodeAt() & 255) || (str[i].charCodeAt() & 255)> ('z'.charCodeAt() & 255))
+    for (let i = 0; i < str.length; i++) {    
+        char = str[i].toLowerCase();   
+        if((char.charCodeAt() & 255) < ('a'.charCodeAt() & 255) || (char.charCodeAt() & 255)> ('z'.charCodeAt() & 255))
             continue;
 
-        charCount[str[i]] = (charCount[str[i]] || 0) + 1 
+        charCount[char] = (charCount[char] || 0) + 1 
     }
 
     const counts = Object.values(charCount); 
@@ -31,12 +32,13 @@ const isPalindromeShort = (str) =>
 
     for (let i = 0; i < str.length; i++) { 
 
-        if((str[i].charCodeAt() & 255) < ('a'.charCodeAt() & 255) || (str[i].charCodeAt() & 255)> ('z'.charCodeAt() & 255))
+        char = str[i].toLowerCase();   
+        if((char.charCodeAt() & 255) < ('a'.charCodeAt() & 255) || (char.charCodeAt() & 255)> ('z'.charCodeAt() & 255))
             continue;
         
-        charCount[str[i]] = (charCount[str[i]] || 0) + 1 
+        charCount[char] = (charCount[char] || 0) + 1 
 
-        if (charCount[str[i]] % 2 == 1) { 
+        if (charCount[char] % 2 == 1) { 
             oddCounts++;
         }else
         {
@@ -48,8 +50,8 @@ const isPalindromeShort = (str) =>
 
 console.log(isPalindromeShort("test"));
 console.log(isPalindromeShort("tenet"));
-console.log(isPalindromeShort("taco cat"));
+console.log(isPalindromeShort("Taco cat"));
 
 console.log(isPalindrome("test"));
 console.log(isPalindrome("tenet"));
-console.log(isPalindrome("taco cat"));
+console.log(isPalindrome("taco caT"));

@@ -7,6 +7,7 @@ Output: True (permutations: "taco cat". "atco cta". etc.)
 
 class Palindrome {
     public boolean isPermutationOfPalidrome(String s) {
+        s = s.toLowerCase();
         int oddCount = 0;
         int length = Character.getNumericValue('z') - Character.getNumericValue('a') + 1;
         int[] table = new int[length];
