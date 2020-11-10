@@ -33,7 +33,7 @@ class TwoSum {
 
     public static void main(String[] args) {
         Solution sl = new Solution();
-        int[] arr = sl.twoSum(new int[] { 2, 7, 11, 15 }, 9);
+        int[] arr = sl.twoSumFast(new int[] { 2, 7, 11, 15 }, 9);
         arrayPrint7(arr, ",");
         arrayPrint8(arr, ",");
     }
@@ -46,6 +46,24 @@ class Solution {
             if (hashmap.containsKey(target - numbers[i]))
                 return new int[] { hashmap.get((target - numbers[i])) + 1, i + 1 };
             hashmap.put(numbers[i], i);
+        }
+        return null;
+    }
+
+    public int[] twoSumFast(int[] numbers, int target) {
+
+        int i = 0, j = 0, sum = 0;
+        for (i = 0, j = numbers.length - 1; i < numbers.length && i < j;) {
+            // System.out.println("numbers[i]" + numbers[i]);
+            // System.out.println("numbers[j]" + numbers[j]);
+            sum = numbers[i] + numbers[j];
+            if (sum == target) {
+                return new int[] { i + 1, j + 1 };
+            } else if (sum > target) {
+                j--;
+            } else {
+                i++;
+            }
         }
         return null;
     }
