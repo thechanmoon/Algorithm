@@ -1,3 +1,11 @@
+class SearchSuggestionsSystem
+{
+    public static void Main(string[] args)
+    {
+        Solution sl = new Solution();
+        sl.SuggestedProducts();
+    }
+}
 public class Solution
 {
     public IList<IList<string>> SuggestedProducts(string[] products, string searchWord)
@@ -22,3 +30,4 @@ public class Solution
         return retList;
     }
 }
+

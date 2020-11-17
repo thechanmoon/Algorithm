@@ -16,7 +16,7 @@ class SearchSuggestionsSystem {
         }
     }
 }
-
+ 
 class Solution {
     public List<List<String>> suggestedProducts(String[] products, String searchWord) {
         List<List<String>> retList = new ArrayList<List<String>>();
@@ -29,9 +29,9 @@ class Solution {
                     listString.add(products[j]);
                 }
             }
-            if (listString.size() > 0) {
+            // if (listString.size() > 0) {
                 retList.add(listString);
-            }
+                // }
         }
         return retList;
     }
