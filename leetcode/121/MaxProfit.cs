@@ -6,12 +6,12 @@ public class Solution
         {
             return 0;
         }
-        int min = prices[0];
+        int min_price = prices[0];
         int maxprofit = 0;
         for (int i = 0; i < prices.Length; i++)
         {
-            maxprofit = Math.Max(maxprofit, prices[i] - min);
-            min = Math.Min(min, prices[i]);
+            min_price = Math.Min(min_price, prices[i]);
+            maxprofit = Math.Max(maxprofit, prices[i] - min_price);
         }
 
         return maxprofit;

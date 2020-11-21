@@ -67,11 +67,11 @@ class Solution {
         if (prices.length == 0) {
             return 0;
         }
-        int min = prices[0];
+        int min_price = prices[0];
         int maxprofit = 0;
         for (int i = 0; i < prices.length; i++) {
-            maxprofit = Math.max(maxprofit, prices[i] - min);
-            min = Math.min(min, prices[i]);
+            min_price = Math.min(min_price, prices[i]);
+            maxprofit = Math.max(maxprofit, prices[i] - min_price);
         }
 
         return maxprofit;
