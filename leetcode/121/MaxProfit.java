@@ -48,4 +48,18 @@ class Solution {
     // }
     // return maxProfit;
     // }
+
+    // public int maxProfit(int[] prices) {
+    // int min = Integer.MAX_VALUE;
+    // int retVal = 0;
+
+    // for (int price : prices) {
+    // if (price < min) {
+    // min = price;
+    // } else if (price - min > retVal) {
+    // retVal = price - min;
+    // }
+    // }
+    // return retVal;
+    // }
 }
