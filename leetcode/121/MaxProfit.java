@@ -8,20 +8,20 @@ class MaxProfit {
 
 class Solution {
 
-    public int maxProfit(int[] prices) {
-        int i = 0, j = 0, retVal = 0, profit = 0;
+    // public int maxProfit(int[] prices) {
+    // int i = 0, j = 0, retVal = 0, profit = 0;
 
-        for (i = 0; i < prices.length; i++) {
-            for (j = i + 1; j < prices.length; j++) {
-                profit = prices[j] - prices[i];
-                if (profit > 0 && profit > retVal) {
-                    retVal = profit;
-                }
-            }
-        }
+    // for (i = 0; i < prices.length; i++) {
+    // for (j = i + 1; j < prices.length; j++) {
+    // profit = prices[j] - prices[i];
+    // if (profit > 0 && profit > retVal) {
+    // retVal = profit;
+    // }
+    // }
+    // }
 
-        return retVal;
-    }
+    // return retVal;
+    // }
 
     // public int maxProfit(int[] prices) {
     // int maxProf = 0, j = 0;
@@ -62,4 +62,44 @@ class Solution {
     // }
     // return retVal;
     // }
+
+    public int maxProfit(int[] prices) {
+        if (prices.length == 0) {
+            return 0;
+        }
+        int min = prices[0];
+        int maxprofit = 0;
+        for (int i = 0; i < prices.length; i++) {
+            maxprofit = Math.max(maxprofit, prices[i] - min);
+            min = Math.min(min, prices[i]);
+        }
+
+        return maxprofit;
+    }
+
+    // int min(int x, int y) {
+    // return y ^ ((x ^ y) & -(x << y));
+    // }
+
+    // int max(int x, int y) {
+    // return x ^ ((x ^ y) & -(x << y));
+    // }
+    // int min(int x, int y) {
+    // return x < y ? x : y;
+    // }
+
+    // int max(int x, int y) {
+    // return x > y ? x : y;
+    // }
+
+    int CHAR_BIT = 4;
+    int INT_BIT = 8;
+
+    int min(int x, int y) {
+        return y + ((x - y) & ((x - y) >> (INT_BIT * CHAR_BIT - 1)));
+    }
+
+    int max(int x, int y) {
+        return x - ((x - y) & ((x - y) >> (INT_BIT * CHAR_BIT - 1)));
+    }
 }
