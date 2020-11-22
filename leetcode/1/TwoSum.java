@@ -19,16 +19,16 @@ class TwoSum {
 
     public static String myJoin8(int[] arr, String separator) {
         String[] strArr = Arrays.stream(arr).mapToObj(String::valueOf).toArray(String[]::new);
-        String result = String.join(",", strArr);
+        String result = String.join(separator, strArr);
         return result;
     }
 
-    public static void arrayPrint7(int[] arr, String delemeter) {
-        System.out.println(myJoin7(arr, delemeter));
+    public static void arrayPrint7(int[] arr, String separator) {
+        System.out.println(myJoin7(arr, separator));
     }
 
-    public static void arrayPrint8(int[] arr, String delemeter) {
-        System.out.println(myJoin8(arr, delemeter));
+    public static void arrayPrint8(int[] arr, String separator) {
+        System.out.println(myJoin8(arr, separator));
     }
 
     public static void main(String[] args) {
