@@ -1,27 +1,3 @@
-class MergeList {
-    public static void main(String[] args) {
-        Solution sl = new Solution();
-
-        ListNode l14 = new ListNode(4, null);
-        ListNode l12 = new ListNode(2, l14);
-        ListNode l11 = new ListNode(1, l12);
-
-        ListNode l24 = new ListNode(4, null);
-        ListNode l23 = new ListNode(3, l24);
-        ListNode l21 = new ListNode(1, l23);
-
-        // sl.mergeTwoLists(l1, l2);
-        ListNode ln = sl.mergeTwoLists(l11, l21);
-
-        while (ln.next != null) {
-
-            System.out.println("result = " + ln.val);
-            ln.next = ln.next.next;
-        }
-
-    }
-}
-
 class ListNode {
     int val;
     ListNode next;
