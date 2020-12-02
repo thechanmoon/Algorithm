@@ -27,4 +27,10 @@
 // A for statement is generic but a forEach statement cat be used only with an array.
 
 
-
+// 8 You've written the code shown to log a set of consecutive values, but it instead results in the values 5,5,5 and 5 being logged to the console. Which revised version of the code would result int the value 1,2,3 and 4 being logged?
+for(var i = 1; i <= 4; i++)
+{
+    setTimeout(function(){
+        console.log(i);
+    },i*10000);
+}
