@@ -1,23 +1,55 @@
-var maxSubArray = function(nums) {
-    let sum = nums[0];
-    for (let i = 1; i < nums.length; i++) {
-        console.log("nums["+i+"] = "+nums[i]);
-        console.log("nums["+(i-1)+"] = "+nums[i-1]);
+// var maxSubArray = function(nums) {
+//     let sum = nums[0];
+//     for (let i = 1; i < nums.length; i++) {
+//         console.log("nums["+i+"] = "+nums[i]);
+//         console.log("nums["+(i-1)+"] = "+nums[i-1]);
 
-        if (nums[i - 1] > 0) {
-            console.log("nums["+i+"] += nums["+(i - 1)+"] = "+(nums[i] + nums[i - 1]));
-            nums[i] += nums[i - 1];
-        }
+//         if (nums[i - 1] > 0) {
+//             console.log("nums["+i+"] += nums["+(i - 1)+"] = "+(nums[i] + nums[i - 1]));
+//             nums[i] += nums[i - 1];
+//         }
         
-        console.log(nums);
-        console.log("before max nums["+i+"] = "+nums[i],"sum : " + sum);
-        sum = Math.max(nums[i], sum);
-        console.log("after max nums["+i+"] = "+nums[i],"sum : " + sum);
-        console.log("========");
-        // sum = nums[i] > sum ? nums[i] : sum
-    }
-    return sum;
+//         console.log(nums);
+//         console.log("before max nums["+i+"] = "+nums[i],"sum : " + sum);
+//         sum = Math.max(nums[i], sum);
+//         console.log("after max nums["+i+"] = "+nums[i],"sum : " + sum);
+//         console.log("========");
+//         // sum = nums[i] > sum ? nums[i] : sum
+//     }
+//     return sum;
+// };
+
+var maxSubArray = function(nums) {
+  let max = nums[0];
+  for (let i = 1; i < nums.length; i++) {
+      if (nums[i - 1] > 0) {
+          nums[i] += nums[i - 1];
+      }
+      max = Math.max(nums[i], max);
+      // max = nums[i] > max ? nums[i] : max;
+  }
+  return max;
 };
+var maxSubArray = function(nums) {
+  let max = nums[0];
+  let sum = 0;
+  for(let i = 0; i < nums.length; i++)
+  {  
+      sum = 0;
+      for(let j = i; j < nums.length; j++)
+      {
+          sum+=nums[j];            
+      // if(sum>max)
+      // console.log(i,nums[i],sum,max)
+
+          max = Math.max(sum,max);
+
+      }
+      
+  }
+  return max;
+};
+
 console.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
 
 /* 
