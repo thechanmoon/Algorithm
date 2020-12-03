@@ -15,4 +15,8 @@ var lengthOfLastWord = function(s) {
     return counter;
 };
 
-console.log(lengthOfLastWord(' '));
+var lengthOfLastWord = function(s) {
+    return s.trim().split(' ').pop().length;
+    // return s.trim().split(' ').slice(-1)[0].length
+}
+console.log(lengthOfLastWord('Hello World'));
