@@ -3,8 +3,9 @@ import java.util.Arrays;
 class PlusOne {
     public static void main(String[] args) {
         Solution sl = new Solution();
-        System.out.println(Arrays.toString(sl.plusOne(new int[] { 9, 9, 9 })));
-        System.out.println(Arrays.toString(sl.plusOne(new int[] { 1, 2, 3 })));
+        // System.out.println(Arrays.toString(sl.plusOne(new int[] { 9, 9, 9 })));
+        // System.out.println(Arrays.toString(sl.plusOne(new int[] { 1, 2, 3 })));
+        System.out.println(Arrays.toString(sl.plusOne(new int[] { 1, 2, 9 })));
     }
 
 }
@@ -29,24 +30,42 @@ class Solution {
     // return result;
     // }
 
+    // public int[] plusOne(int[] digits) {
+    // boolean bCarry = false;
+    // for (int i = 0; i < digits.length; i++) {
+    // if (digits[i] != 9)
+    // {
+    // // System.out.println(digits[i]);
+    // bCarry = true;
+    // }
+    // }
+    // if (bCarry) {
+    // int carry = 1;
+    // for (int i = digits.length - 1; i >= 0; i--) {
+    // int temp = digits[i];
+    // digits[i] = (digits[i] + carry) % 10;
+    // carry = (temp + carry) / 10;
+    // }
+    // return digits;
+    // } else {
+    // int[] result = new int[digits.length + 1];
+    // result[0] = 1;
+    // return result;
+    // }
+    // }
+
     public int[] plusOne(int[] digits) {
-        boolean bCarry = false;
-        for (int i = 0; i < digits.length; i++) {
-            if (digits[i] != 9)
-                bCarry = true;
-        }
-        if (bCarry) {
-            int carry = 1;
-            for (int i = digits.length - 1; i >= 0; i--) {
-                int temp = digits[i];
-                digits[i] = (digits[i] + carry) % 10;
-                carry = (temp + carry) / 10;
-            }
+    for (int i = digits.length - 1; i >= 0; i--) {
+        if (++digits[i] != 10) {
+            System.out.println(i + "," + Arrays.toString(digits));
             return digits;
-        } else {
-            int[] result = new int[digits.length + 1];
-            result[0] = 1;
-            return result;
         }
+        digits[i] = 0;
+        }
+        // System.out.println(Arrays.toString(digits));
+        int[] res = new int[digits.length + 1];
+        res[0] = 1;
+        // System.out.println(Arrays.toString(res));
+        return res;
     }
 }
