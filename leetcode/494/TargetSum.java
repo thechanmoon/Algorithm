@@ -8,7 +8,7 @@ class TargetSum {
     }
 }
 
-class Solution0 {
+class Solution {
     int count = 0;
 
     public int findTargetSumWays(int[] nums, int S) {
@@ -27,7 +27,7 @@ class Solution0 {
     }
 }
 
-class Solution {
+class Solution1 {
     int count = 0;
 
     public int findTargetSumWays(int[] nums, int S) {
