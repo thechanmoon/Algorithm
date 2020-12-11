@@ -1,4 +1,4 @@
-var Sqrt = function(x) {
+var mySqrt = function(x) {
     let l = 0;
     let r = x;
     
@@ -17,4 +17,4 @@ var Sqrt = function(x) {
     return r;
   };
 
-  console.log(Sqrt(10));
+  console.log(mySqrt(10));

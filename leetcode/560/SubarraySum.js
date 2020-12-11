@@ -25,18 +25,25 @@ var subarraySum = function(nums, k) {
         if(sum===k)
             count++;
         
-        if(hash[sum-k] !==undefined)
+        if(hash[sum-k])
         {
             count += hash[sum-k];     
         }
-        
-        if(hash[sum] === undefined)
+
+        if(hash[sum])
         {
-           hash[sum] = 1;     
+            hash[sum]++;         
+            
         }else
         {
-           hash[sum]++;         
-        }  
+            hash[sum] = 1;     
+        } 
+
+        //count+= (hash[sum-k] || 0)
+        //hash[sum] = (hash[sum] || 0) + 1;
+ 
     }
     return count;
 };
+
+console.log(subarraySum([1,1,1],2));

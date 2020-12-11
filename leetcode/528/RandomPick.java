@@ -1,5 +1,13 @@
 import java.util.*;
 
+//e.g. w: [1,2,3,4] , so the total weight of this w array will be 1 + 2 + 3 + 4 = 10 then the probability(proportion of its weight) of each index would be 0: 1/10, 1: 2/10, 3: 3/10, 4: 4/10
+
+//If space complexity is not a problem, then we can create a new array to store index by its frequency like this: still use my previous example, [0, 1, 1, 2, 2, 2, 3, 3, 3, 3], then generate a random number for 0 to its length. This approach takes lots of space : O(N) here N equals sum of w, but pickIndex takes O(1) time
+
+//Another way to trade off time complexity to space complexity would be using pre calculate sum array and binary search: it tooks O(n) space and O(logN) time (n is number of w array, N is sum)
+
+
+
 class Solution {
     int[] preSum;
     Random random;

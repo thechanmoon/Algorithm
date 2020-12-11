@@ -22,22 +22,23 @@ class Node {
 
 class Solution {
 
-    HashMap<Node, Node> hashMap = new HashMap<Node, Node>();
-
+    HashMap<Node, Node> hashmap = new HashMap<Node, Node>();
+    
     public Node copyRandomList(Node head) {
         if (head == null)
             return null;
-
-        if (hashMap.containsKey(head))
-            return hashMap.get(head);
-
+        
+        if (hashmap.containsKey(head)) {
+            return hashmap.get(head);
+        }
+        
         Node node = new Node(head.val);
-
-        hashMap.put(head, node);
-
+        
+        hashmap.put(head, node);
+        
         node.next = copyRandomList(head.next);
-        node.random = copyRandomList(head.next);
-
+        node.random = copyRandomList(head.random);
+        
         return node;
     }
 }
