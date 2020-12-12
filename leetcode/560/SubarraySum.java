@@ -13,51 +13,48 @@ public class SubarraySum {
 
 class Solution {
 
-    // public int subarraySum(int[] nums, int k) {
-    // int count = 0;
-    // int sum = 0;
-    // HashMap<Integer, Integer> hashmap = new HashMap<Integer, Integer>();
-    // hashmap.put(0, 1);
-    // for (int i = 0; i < nums.length; i++) {
-    // sum += nums[i];
-    // if (hashmap.containsKey(sum - k)) {
-    // count += hashmap.get(sum - k);
-    // }
-    // if (hashmap.containsKey(sum)) {
-    // hashmap.put(sum, hashmap.get(sum) + 1);
-    // } else {
-    // hashmap.put(sum, 1);
-    // }
-    // }
-
-    // System.out.println(hashmap);
-
-    // return count;
-    // }
-
     public int subarraySum(int[] nums, int k) {
         int count = 0;
-        int[] sum = new int[nums.length + 1];
-        sum[0] = 0;
-        for (int i = 0; i < nums.length; i++)
-            sum[i + 1] = sum[i] + nums[i];
-
-        System.out.println(Arrays.toString(sum));
-        for (int start = 0; start < nums.length; start++) {
-            for (int end = start + 1; end <= nums.length; end++) {
-                System.out.println("start = " + start);
-                System.out.println("end = " + end);
-                System.out.println("start sum[i] = " + sum[start]);
-                System.out.println("end sum[i] = " + sum[end]);
-                if (sum[end] - sum[start] == k) {
-                    count++;
-                    System.out.println("count = " + count);
-                }
-                System.out.println("===============");
+        int sum = 0;
+        HashMap<Integer, Integer> hashmap = new HashMap<Integer, Integer>();
+        hashmap.put(0, 1);
+        for (int i = 0; i < nums.length; i++) {
+            sum += nums[i];
+            if (hashmap.containsKey(sum - k)) {
+                count += hashmap.get(sum - k);
+            }
+            if (hashmap.containsKey(sum)) {
+                hashmap.put(sum, hashmap.get(sum) + 1);
+            } else {
+                hashmap.put(sum, 1);
             }
         }
         return count;
     }
+
+    // public int subarraySum(int[] nums, int k) {
+    // int count = 0;
+    // int[] sum = new int[nums.length + 1];
+    // sum[0] = 0;
+    // for (int i = 0; i < nums.length; i++)
+    // sum[i + 1] = sum[i] + nums[i];
+
+    // System.out.println(Arrays.toString(sum));
+    // for (int start = 0; start < nums.length; start++) {
+    // for (int end = start + 1; end <= nums.length; end++) {
+    // System.out.println("start = " + start);
+    // System.out.println("end = " + end);
+    // System.out.println("start sum[i] = " + sum[start]);
+    // System.out.println("end sum[i] = " + sum[end]);
+    // if (sum[end] - sum[start] == k) {
+    // count++;
+    // System.out.println("count = " + count);
+    // }
+    // System.out.println("===============");
+    // }
+    // }
+    // return count;
+    // }
 
     // public int subarraySum(int[] nums, int k) {
     // int count = 0, sum = 0;
