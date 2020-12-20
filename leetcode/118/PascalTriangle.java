@@ -7,30 +7,30 @@ class PascalTriangle {
     }
 }
 
-class Solution {
-    public List<List<Integer>> generate(int numRows) {
+// class Solution {
+// public List<List<Integer>> generate(int numRows) {
 
-        List<List<Integer>> result = new ArrayList<List<Integer>>();
-        List<Integer> prevList = new ArrayList<Integer>();
+// List<List<Integer>> result = new ArrayList<List<Integer>>();
+// List<Integer> prevList = new ArrayList<Integer>();
 
-        for (int r = 1; r <= numRows; r++) {
-            List<Integer> tempList = new ArrayList<Integer>();
-            for (int c = 1; c <= r; c++) {
-                if (c == 1 || c == r) {
-                    tempList.add(1);
-                } else {
-                    tempList.add(prevList.get(c - 2) + prevList.get(c - 1));
-                }
-            }
+// for (int r = 1; r <= numRows; r++) {
+// List<Integer> tempList = new ArrayList<Integer>();
+// for (int c = 1; c <= r; c++) {
+// if (c == 1 || c == r) {
+// tempList.add(1);
+// } else {
+// tempList.add(prevList.get(c - 2) + prevList.get(c - 1));
+// }
+// }
 
-            prevList = tempList;
-            result.add(tempList);
-        }
+// prevList = tempList;
+// result.add(tempList);
+// }
 
-        return result;
+// return result;
 
-    }
-}
+// }
+// }
 
 // class Solution {
 // public List<List<Integer>> generate(int numRows) {
