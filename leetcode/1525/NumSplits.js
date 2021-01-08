@@ -18,7 +18,7 @@ var numSplits = function(s) {
     {
         distinct_left  += ++left[s[i].charCodeAt() - 'a'.charCodeAt()] == 1 ;
         distinct_right  -= --right[s[i].charCodeAt() - 'a'.charCodeAt()]== 0 ;
-        retVal += distinct_left  == distinct_right  ? 1 : 0;    
+        retVal += distinct_left  == distinct_right;    
 
     }
     return retVal;
