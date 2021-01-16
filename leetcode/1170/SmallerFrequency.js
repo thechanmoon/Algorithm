@@ -50,3 +50,6 @@ var getMinQuery = function(s) {
     }
     return minLenQuery;
 }
+
+console.log(numSmallerByFrequency(["cbd"],["zaaaz"]));
+console.log(numSmallerByFrequency(["bbb","cc"],["a","aa","aaa","aaaa"]));
