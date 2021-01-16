@@ -4,55 +4,49 @@ class SmallerFrequency {
     public static void main(String[] args) {
         Solution sl = new Solution();
         System.out.println(Arrays.toString(sl.numSmallerByFrequency(new String[] { "cbd" }, new String[] { "zaaaz" })));
+        System.out.println(Arrays.toString(
+                sl.numSmallerByFrequency(new String[] { "bbb", "cc" }, new String[] { "a", "aa", "aaa", "aaaa" })));
     }
 }
 
 class Solution {
     public int[] numSmallerByFrequency(String[] queries, String[] words) {
 
-        // Create an aarray to store the result.
-        int[] ans = new int[queries.length];
+        int[] result = new int[queries.length];
 
-        // create arrays to store the count of the smallest character in queries and
-        // words.
-        int[] qr = new int[queries.length];
-        int[] wor = new int[words.length];
 
-        // fill the query array with count of min character
+        int[] query = new int[queries.length];
+        int[] word = new int[words.length];
+
         for (int i = 0; i < queries.length; i++) {
-            qr[i] = getMinQuery(queries[i]);
+            query[i] = getMinQuery(queries[i]);
         }
 
         // System.out.println(Arrays.toString(qr));
 
-        // fill the words array with count of min character
         for (int i = 0; i < words.length; i++) {
-            wor[i] = getMinQuery(words[i]);
+            word[i] = getMinQuery(words[i]);
         }
 
         // System.out.println(Arrays.toString(wor));
 
-        // compare each queries count with every count in words array.
-        for (int i = 0; i < qr.length; i++) {
+        for (int i = 0; i < query.length; i++) {
 
             int count = 0;
-            for (int j = 0; j < wor.length; j++) {
+            for (int j = 0; j < word.length; j++) {
 
-                // increase count only when word count is more than query count.
-                if (qr[i] < wor[j]) {
+                if (query[i] < word[j]) {
                     count++;
                 }
             }
 
-            // store the count in answer array.
-            ans[i] = count;
+            result[i] = count;
         }
 
-        return ans;
+        return result;
 
     }
 
-    // fetch the count of the smallest character in a string -- helper fuction.
     public int getMinQuery(String s) {
 
         char[] charAr = s.toCharArray();
