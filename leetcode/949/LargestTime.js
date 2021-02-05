@@ -40,3 +40,9 @@ var largestTimeFromDigits = function(A) {
     generate(arr, arr.length);
     return result;
   };
+
+  console.log(largestTimeFromDigits([1,1,1,1]));
+  console.log(largestTimeFromDigits([1,2,3,4]));
+  console.log(largestTimeFromDigits([5,5,5,5]));
+  console.log(largestTimeFromDigits([0,0,1,0]));
+  console.log(largestTimeFromDigits([0,0,0,0]));
