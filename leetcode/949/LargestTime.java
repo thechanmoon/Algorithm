@@ -2,6 +2,9 @@ class LargestTime{
     public static void main(String[] args) {
         Solution sl = new Solution();
         System.out.println(sl.largestTimeFromDigits(new int[]{1,2,3,4}));
+        System.out.println(sl.largestTimeFromDigits(new int[]{5,5,5,5}));
+        System.out.println(sl.largestTimeFromDigits(new int[]{0,0,0,0}));
+        System.out.println(sl.largestTimeFromDigits(new int[]{0,0,1,0}));
     }
 }
 
