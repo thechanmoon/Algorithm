@@ -1,5 +1,11 @@
 import java.util.*;
 
+class LongestSubstring {
+    public static void main(String[] args) {
+        Solution sl = new Solution();
+        System.out.println(sl.lengthOfLongestSubstring("abcabcbb"));
+    }
+}
 class Solution {
     public int lengthOfLongestSubstring(String s) {
         int i = 0;
