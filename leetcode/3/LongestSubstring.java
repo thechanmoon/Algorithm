@@ -11,16 +11,14 @@ class Solution {
         int i = 0;
         int j = 0;
         int max = 0;
-
         HashSet<Character> hashset = new HashSet<Character>();
-
-        for (j = 0; j < s.length();) {
-            if (!hashset.contains(s.charAt(j))) {
-                hashset.add(s.charAt(j++));
-                max = Math.max(hashset.size(), max);
+        while (i < s.length()) {
+            if (!hashset.contains(s.charAt(i))) {
+                hashset.add(s.charAt(i++));
+                max = Math.max(max, hashset.size());
             } else {
-                hashset.remove(s.charAt(i++));
-            }
+                hashset.remove(s.charAt(j++));
+            }        
         }
         return max;
     }
