@@ -11,7 +11,9 @@ class Solution {
         int i = 0;
         int j = 0;
         int max = 0;
+
         HashSet<Character> hashset = new HashSet<Character>();
+
         while (i < s.length()) {
             if (!hashset.contains(s.charAt(i))) {
                 hashset.add(s.charAt(i++));
