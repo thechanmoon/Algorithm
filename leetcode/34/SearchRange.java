@@ -1,3 +1,11 @@
+import java.util.Arrays;
+
+class SearchRange {
+    public static void main(String[] args) {
+        Solution sl = new Solution();
+        System.out.println(Arrays.toString(sl.searchRange(new int[] { 1, 2, 3, 4, 5, 7, 7, 7, 7, 8 }, 7)));
+    }
+}
 class Solution {
     public int[] searchRange(int[] nums, int target) {
         return new int[] { findFirst(nums, target), findLast(nums, target) };
