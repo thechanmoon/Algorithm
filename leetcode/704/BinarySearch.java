@@ -1,3 +1,9 @@
+class BinarySearch {
+    public static void main(String[] args) {
+        System.out.println(new Solution().search(new int[] { -1, 0, 3, 5, 9, 12 }, 9));
+    }
+}
+
 class Solution {
     public int search(int[] nums, int target) {
 
