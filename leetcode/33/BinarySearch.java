@@ -1,3 +1,9 @@
+class BinarySearch{
+    public static void main(String[] args) {
+        System.out.println(new Solution().search(new int[]{4,5,6,7,0,1,2,3}, 0));
+    }
+}
+
 class Solution {
     public int search(int[] nums, int target) {
         int left = 0, right = nums.length - 1;
