@@ -1,3 +1,7 @@
+using namespace std;
+
+#include <iostream>
+
 class Solution {
 public:
     bool judgeCircle(string moves) {
@@ -18,3 +22,9 @@ public:
         return (x == 0 && y == 0);
     }
 };
+
+int main() {
+    Solution sl;
+    sl.judgeCircle("UD")? std::cout << "true\n": std::cout << "flase\n";   
+ return 0;
+}
