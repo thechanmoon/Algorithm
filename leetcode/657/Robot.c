@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdbool.h>
 bool judgeCircle(char * moves){
     
     int length = strlen(moves);
@@ -18,4 +21,9 @@ bool judgeCircle(char * moves){
             y--;
     }
     return (x == 0 && y == 0);
+}
+
+int main() {
+ printf(judgeCircle("UD")?"true\n":"false\n");   
+ return 0;
 }
