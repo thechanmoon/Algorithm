@@ -11,4 +11,8 @@ def contains_duplicate(nums)
     false
 end
 
+# def contains_duplicate(nums)
+#     nums != nums.uniq
+# end
+
 puts contains_duplicate([1,2,3,1]);
