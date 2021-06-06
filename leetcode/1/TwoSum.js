@@ -2,11 +2,12 @@ var twoSum = function(nums, target) {
     let hashmap = {};
     for(let i = 0; i < nums.length; i++)
     {
-        if(hashmap[target-nums[i]] !== undefined)
+        // if(hashmap[target-nums[i]] !== undefined)
+        if(target-nums[i] in hashmap)
             return [hashmap[(target - nums[i])],i];
         hashmap[nums[i]] = i;
     }
-    return null;
+    return [];
 };
 const twoSum2 = (numbers, sum) => {
     const dataObject = {}
