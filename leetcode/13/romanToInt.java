@@ -4,7 +4,9 @@ class RomanToInt {
     public static void main(String[] args) {
         Solution sl = new Solution();
         System.out.println(sl.romanToInt("MCMXCIV"));
+        System.out.println(sl.romanToInt2("MCMXCIV"));
         System.out.println(sl.romanToInt("III"));
+        System.out.println(sl.romanToInt2("III"));
     }
 }
 
@@ -33,6 +35,8 @@ class Solution {
 
             // VI I - max = 0, value = 1 , value > max , total += 1, max = 1;
             // V - max = 1, value = 5 , value > max , total += 5, max = 5;
+
+            //System.out.println("charAt(i) : " + s.charAt(i) + " max = " + max + " value = " + value );
  
             if (value < max) {
                 total -= value;
@@ -43,5 +47,32 @@ class Solution {
         }
 
         return total;
+    }
+
+    public int romanToInt2(String s) {
+        int result = 0;
+        HashMap<Character,Integer> hash = new HashMap<>();
+        hash.put('I',1);
+        hash.put('V',5);
+        hash.put('X',10);
+        hash.put('L',50);
+        hash.put('C',100);
+        hash.put('D',500);
+        hash.put('M',1000);
+        
+        result = hash.get(s.charAt(s.length() -1));
+            
+        for(int i = s.length() -2; i > -1; i--)
+        {
+            
+            if(hash.get(s.charAt(i)) < hash.get(s.charAt(i+1)))
+            {
+                result = result - hash.get(s.charAt(i));
+            }else
+            {
+                result += hash.get(s.charAt(i));
+            }
+        }
+        return result; 
     }
 }
