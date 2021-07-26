@@ -42,10 +42,16 @@ class Test {
         // str = sl.compressString("aaaaabbbbbeeeehhh");
         // System.out.println(str);
 
-        Palindrome pd = new Palindrome();
+        //Palindrome pd = new Palindrome();
         // System.out.println(pd.isPermutationOfPalidrome("taco caT"));
-        System.out.println(pd.isPalidrome("taco caT"));
-        System.out.println(pd.isPalidrome("taco cat"));
+        //System.out.println(pd.isPalidrome("taco caT"));
+        //System.out.println(pd.isPalidrome("taco cat"));
 
+
+        for(int i = 0; i < 3; i++)
+        {
+            int c = i+(i)*3+97;
+            System.out.println(Character.toString(c));
+        }
     }
 }

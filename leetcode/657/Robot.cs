@@ -1,3 +1,14 @@
+using System;
+
+public class Robot
+{
+    public static void Main(string[] args)
+    {
+        Solution sl = new Solution();
+        Console.WriteLine (sl.JudgeCircle("UD"));
+    }
+}
+
 public class Solution {
     public bool JudgeCircle(string moves) {
         int x = 0;
