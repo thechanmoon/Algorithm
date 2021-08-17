@@ -5,7 +5,7 @@ import java.util.stream.*;
 class SingleNumber {
     public static void main(String[] args) {
         //Solution1 sl = new Solution1();
-         Solution5 s = new Solution5();
+         Solution6 s = new Solution6();
         //System.out.println(s1.singleNumber(new int[]{1,1}));
          System.out.println(s.singleNumber(new int[]{2,1,2,3,1}));
         // System.out.println(sl.singleNumber(new int[]{1,0,1}));
@@ -160,6 +160,23 @@ class Solution5 {
         for(int i = 0; i < nums.length; i++){
             if(hashmap.get(nums[i])== 1)
                 return nums[i];
+        }
+        return 0;
+    }
+}
+
+class Solution6 {
+    public int singleNumber(int[] nums) {
+
+        HashMap<Integer, Integer> hashmap = new HashMap<>();
+        
+        for(int num : nums){
+                hashmap.put(num,hashmap.getOrDefault(num,0)+1);
+        }
+        
+        for(int num : nums){
+            if(hashmap.get(num)== 1)
+                return num;
         }
         return 0;
     }
