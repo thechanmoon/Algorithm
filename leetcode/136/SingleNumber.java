@@ -5,7 +5,7 @@ import java.util.stream.*;
 class SingleNumber {
     public static void main(String[] args) {
         //Solution1 sl = new Solution1();
-         Solution3 s = new Solution3();
+         Solution4 s = new Solution4();
         //System.out.println(s1.singleNumber(new int[]{1,1}));
          System.out.println(s.singleNumber(new int[]{2,1,2,3,1}));
         // System.out.println(sl.singleNumber(new int[]{1,0,1}));
@@ -103,7 +103,7 @@ class Solution3 {
         }
         
         for(Map.Entry<Integer, Integer> entry : hashmap.entrySet()){
-            int key = entry.getKgitey();
+            int key = entry.getKey();
             int value = entry.getValue();
             
             // if (value % 2 == 1) // odd number
@@ -113,5 +113,31 @@ class Solution3 {
             }
         }
         return 0;
+    }
+}
+
+class Solution4 {
+    public int singleNumber(int[] nums) {
+
+        int sumUnique = 0;
+ 
+        HashSet<Integer> s = new HashSet<Integer>();
+        for (int i = 0; i < nums.length; i++)
+        {
+            if (!s.contains(nums[i]))
+            {
+                sumUnique += nums[i];
+                s.add(nums[i]);
+            }
+        }
+        
+        //int sum = Arrays.stream(nums).sum();
+        int sum = 0;
+        for (int i = 0; i < nums.length; i++)
+        {
+            sum += nums[i];
+        }
+        
+        return sumUnique*2 - sum;
     }
 }
