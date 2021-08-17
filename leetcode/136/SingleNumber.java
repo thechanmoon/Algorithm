@@ -1,12 +1,13 @@
 import java.util.*;
+import java.util.stream.*;
 
 // Definition for a Node.
 class SingleNumber {
     public static void main(String[] args) {
-        // Solution sl = new Solution();
-        Solution1 sl = new Solution1();
-        System.out.println(sl.singleNumber(new int[]{2,1,1}));
-        // System.out.println(sl.singleNumber(new int[]{2,2,1}));
+        //Solution1 sl = new Solution1();
+         Solution3 s = new Solution3();
+        //System.out.println(s1.singleNumber(new int[]{1,1}));
+         System.out.println(s.singleNumber(new int[]{2,1,2,3,1}));
         // System.out.println(sl.singleNumber(new int[]{1,0,1}));
         // System.out.println(sl.singleNumber(new int[]{1,3,1,-1,3}));
 
@@ -64,5 +65,53 @@ class Solution1 {
             
         }
         return a;
+    }
+}
+
+class Solution2 {
+    public int singleNumber(int[] nums) {
+        if (nums.length == 1) {
+            return nums[0];
+        }
+        Set<Integer> vals = new HashSet<>();
+        
+        for (int n : nums) {
+            if (vals.contains(n))
+                vals.remove(n);
+            else
+                vals.add(n);
+        }
+        return vals.stream().collect(Collectors.toList()).get(0);
+    }
+}
+
+class Solution3 {
+    public int singleNumber(int[] nums) {
+        // int a = 0;
+        // for(int i = 0; i < nums.length; i++)
+        // {
+        //     a = a ^ nums[i];
+        // }
+        // return a;
+        HashMap<Integer, Integer> hashmap = new HashMap<>();
+        
+        for(int i = 0; i < nums.length; i++){
+            if(!hashmap.containsKey(nums[i]))
+                hashmap.put(nums[i],1);
+            else
+                hashmap.put(nums[i],hashmap.get(nums[i])+1);
+        }
+        
+        for(Map.Entry<Integer, Integer> entry : hashmap.entrySet()){
+            int key = entry.getKgitey();
+            int value = entry.getValue();
+            
+            // if (value % 2 == 1) // odd number
+            if (value == 1)
+            {
+                return key;
+            }
+        }
+        return 0;
     }
 }
