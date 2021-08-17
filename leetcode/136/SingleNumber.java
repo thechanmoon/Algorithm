@@ -3,10 +3,13 @@ import java.util.*;
 // Definition for a Node.
 class SingleNumber {
     public static void main(String[] args) {
-        Solution sl = new Solution();
-        System.out.println(sl.singleNumber(new int[]{2,2,1}));
-        System.out.println(sl.singleNumber(new int[]{1,0,1}));
-        System.out.println(sl.singleNumber(new int[]{1,3,1,-1,3}));
+        // Solution sl = new Solution();
+        Solution1 sl = new Solution1();
+        System.out.println(sl.singleNumber(new int[]{2,1,1}));
+        // System.out.println(sl.singleNumber(new int[]{2,2,1}));
+        // System.out.println(sl.singleNumber(new int[]{1,0,1}));
+        // System.out.println(sl.singleNumber(new int[]{1,3,1,-1,3}));
+
     }
 }
 class Solution {
@@ -45,5 +48,21 @@ class Solution {
             }
         }
         return ret;
+    }
+}
+
+class Solution1 {
+    public int singleNumber(int[] nums) {
+        int a=0;
+        System.out.println("init " + Arrays.toString(nums));
+        for(int i=0;i<nums.length;i++){
+            System.out.println("i : " +i);
+            System.out.println("a : " +a);
+            System.out.println("nums["+i+"] = " +  +nums[i]);
+            a=a^nums[i];
+            System.out.println("a^"+"nums[i] = " +  +a);
+            
+        }
+        return a;
     }
 }
