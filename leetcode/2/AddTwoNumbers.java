@@ -59,6 +59,7 @@ class Solution {
             System.out.println("currnet.next 1  = " + current.next);
             System.out.println("current 1 = " + current) ;
             System.out.println("current.next 1 = " + current.next);
+            
             if (l1 != null)
                 l1 = l1.next;
             if (l2 != null)
