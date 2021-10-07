@@ -123,8 +123,8 @@ var maxProfit = function(prices) {
             //         max = prices[i] - min;
             // }
             
-            min = ( min < prices[i] ) ? min : prices[i];
-            max = (prices[i] - min > max) ? prices[i] - min : max;
+            min = ( prices[i] < min ) ?  prices[i] : min;
+            max = ( prices[i] - min > max) ? prices[i] - min : max;
             
             // console.log("after");
             // console.log("min = "+min);

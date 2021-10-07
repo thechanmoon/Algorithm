@@ -115,9 +115,11 @@ class Solution {
             // min = Math.min(min, prices[i]);
             // maxprofit = (maxprofit > prices[i]-min)? maxprofit : prices[i]-min;
             // min = (min < prices[i]) ? min : prices[i];
-            min = Math.min(min, prices[i]);
-            maxprofit = Math.max(maxprofit, (prices[i] - min));
+            // min = Math.min(min, prices[i]);
+            // maxprofit = Math.max(maxprofit, (prices[i] - min));
 
+            min = ( prices[i] < min ) ?  prices[i] : min;
+            max = ( prices[i] - min > max) ? prices[i] - min : max;
         }
 
         return maxprofit;
