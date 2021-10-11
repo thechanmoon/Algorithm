@@ -103,25 +103,37 @@ class Solution {
     // return x - ((x - y) & ((x - y) >> (INT_BIT * CHAR_BIT - 1)));
     // }
 
-    public int maxProfit(int[] prices) {
-        if (prices.length == 0) {
-            return 0;
+    // public int maxProfit(int[] prices) {
+    //     if (prices.length == 0) {
+    //         return 0;
+    //     }
+    //     int min = prices[0];
+    //     int maxprofit = 0;
+    //     for (int i = 0; i < prices.length; i++) {
+
+    //         // maxprofit = Math.max(maxprofit, prices[i] - min);
+    //         // min = Math.min(min, prices[i]);
+    //         // maxprofit = (maxprofit > prices[i]-min)? maxprofit : prices[i]-min;
+    //         // min = (min < prices[i]) ? min : prices[i];
+    //         // min = Math.min(min, prices[i]);
+    //         // maxprofit = Math.max(maxprofit, (prices[i] - min));
+
+    //         min = ( prices[i] < min ) ?  prices[i] : min;
+    //         max = ( prices[i] - min > max) ? prices[i] - min : max;
+    //     }
+
+    //     return maxprofit;
+    // }
+
+        public int maxProfit(int[] prices) {
+        int min_price = Integer.MAX_VALUE;
+        int max_profit = 0;
+        
+        for(int i = 0; i < prices.length; i++){
+            min_price = Math.min(min_price, prices[i]);
+            max_profit = Math.max(max_profit, prices[i]-min_price);
         }
-        int min = prices[0];
-        int maxprofit = 0;
-        for (int i = 0; i < prices.length; i++) {
-
-            // maxprofit = Math.max(maxprofit, prices[i] - min);
-            // min = Math.min(min, prices[i]);
-            // maxprofit = (maxprofit > prices[i]-min)? maxprofit : prices[i]-min;
-            // min = (min < prices[i]) ? min : prices[i];
-            // min = Math.min(min, prices[i]);
-            // maxprofit = Math.max(maxprofit, (prices[i] - min));
-
-            min = ( prices[i] < min ) ?  prices[i] : min;
-            max = ( prices[i] - min > max) ? prices[i] - min : max;
-        }
-
-        return maxprofit;
+        
+        return max_profit;
     }
 }

@@ -39,20 +39,38 @@
 
 # @param {Integer[]} prices
 # @return {Integer}
-def max_profit(prices)  
-    min = prices[0];
-    max = 0;
+# def max_profit(prices)  
+#     min = prices[0];
+#     max = 0;
 
-    for i in 1..prices.length()-1
+#     for i in 1..prices.length()-1
    
-        min = prices[i] < min ? prices[i] : min;
-        max = prices[i] - min > max ? prices[i] - min : max;
+#         min = prices[i] < min ? prices[i] : min;
+#         max = prices[i] - min > max ? prices[i] - min : max;
         
-    end
+#     end
 
-    max;
+#     max;
+# end
+
+class Integer
+    N_BYTES = [42].pack('i').size
+    N_BITS = N_BYTES * 16
+    MAX = 2 ** (N_BITS - 2) - 1
+    MIN = -MAX - 1
 end
 
-    puts max_profit([ 7, 1, 5, 3, 6, 4]);
-    puts max_profit([ 7, 6, 5, 4, 3, 1]);
+def max_profit(prices)
+    
+    min_price = Integer::MAX;
+    max_profit = 0;
+    
+    for i in 0..prices.size-1
+        min_price = [min_price,prices[i]].min;
+        max_profit = [max_profit,prices[i] - min_price].max;
+    end    
+    max_profit;
+end
+puts max_profit([ 7, 1, 5, 3, 6, 4]);
+puts max_profit([ 7, 6, 5, 4, 3, 1]);
    

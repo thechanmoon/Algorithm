@@ -101,37 +101,54 @@
 //     return maxprofit;        
 // }
 
-var maxProfit = function(prices) {
-        let min = prices[0];
-        let max = 0;
+// var maxProfit = function(prices) {
+//         let min = prices[0];
+//         let max = 0;
         
-        for(let i = 1; i < prices.length; i++)
-        { 
-            // console.log("day " + (i+1));
-            // console.log("before");
-            // console.log("prices[i] = "+prices[i]);
-            // console.log("min = "+min);
-            // console.log("max = "+max);
+//         for(let i = 1; i < prices.length; i++)
+//         { 
+//             // console.log("day " + (i+1));
+//             // console.log("before");
+//             // console.log("prices[i] = "+prices[i]);
+//             // console.log("min = "+min);
+//             // console.log("max = "+max);
             
-            // if(min>prices[i])
-            // {
-            //     min = prices[i];    
-            // }
-            // else
-            // {
-            //     if(prices[i] - min > max)
-            //         max = prices[i] - min;
-            // }
+//             // if(min>prices[i])
+//             // {
+//             //     min = prices[i];    
+//             // }
+//             // else
+//             // {
+//             //     if(prices[i] - min > max)
+//             //         max = prices[i] - min;
+//             // }
             
-            min = ( prices[i] < min ) ?  prices[i] : min;
-            max = ( prices[i] - min > max) ? prices[i] - min : max;
+//             min = ( prices[i] < min ) ?  prices[i] : min;
+//             max = ( prices[i] - min > max) ? prices[i] - min : max;
             
-            // console.log("after");
-            // console.log("min = "+min);
-            // console.log("max = "+max);
-            // console.log();
+//             // console.log("after");
+//             // console.log("min = "+min);
+//             // console.log("max = "+max);
+//             // console.log();
+//         }
+//         return max;
+// };
+
+/**
+ * @param {number[]} prices
+ * @return {number}
+ */
+var maxProfit = function(prices) {
+        let min_price = Number.MAX_VALUE;
+        let max_profit = 0;
+    
+        console.log(min_price);
+        for(let i = 0; i < prices.length; i++){
+            min_price = Math.min(min_price, prices[i]);
+            max_profit = Math.max(max_profit, prices[i]-min_price);
         }
-        return max;
+        
+        return max_profit;
 };
 
 console.log(maxProfit([ 7, 1, 5, 3, 6, 4]));
