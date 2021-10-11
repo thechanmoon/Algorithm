@@ -1,5 +1,5 @@
 var maxProfit = function(prices) {
-    if(prices.length == 0)
+    if(prices.length < 2)
         return 0;
     
     let profit = 0;

@@ -14,3 +14,11 @@ int maxProfit(int* prices, int pricesSize){
 
     return profit;
 }
+
+int main()
+{
+    int array[] = {7, 1, 5, 3, 6, 4};
+    int length = sizeof(array) / sizeof(array[0]);
+    int profit = maxProfit(array, length);
+    printf("%d", profit);
+}

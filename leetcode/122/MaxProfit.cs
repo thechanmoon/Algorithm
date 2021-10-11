@@ -2,7 +2,7 @@ public class Solution
 {
     public int MaxProfit(int[] prices)
     {
-        if (prices.Length == 0)
+        if (prices.Length < 2)
             return 0;
 
         int profit = 0;

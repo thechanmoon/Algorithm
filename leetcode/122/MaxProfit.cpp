@@ -1,3 +1,8 @@
+#include <iostream>
+#include <vector>
+#include <climits>
+using namespace std;
+
 class Solution
 {
 public:
@@ -19,3 +24,19 @@ public:
         return profit;
     }
 };
+
+int main()
+{
+    Solution sl;
+    vector<int> vect = {7,1,5,3,6,6};
+    // vect.push_back(7);
+    // vect.push_back(1);
+    // vect.push_back(5);
+    // vect.push_back(3);
+    // vect.push_back(6);
+    // vect.push_back(4);
+
+    cout << sl.maxProfit(vect) << "\n";
+}
+
+//gcc -o MaxProfitCpp MaxProfit.cpp -lstdc++
