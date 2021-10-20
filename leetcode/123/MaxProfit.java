@@ -2,11 +2,15 @@ import javax.sound.midi.Soundbank;
 
 class MaxProfit {
     public static void main(String[] args) {
-        Solution sl = new Solution();
-        System.out.println(sl.maxProfit(new int[] { 3,3,5,0,0,3,1,4 }));
+        Solution s = new Solution();
+        System.out.println(s.maxProfit(new int[] { 3, 3, 5, 0, 0, 3, 1, 4 }));
+
+        Solution1 s1 = new Solution1();
+        System.out.println(s1.maxProfit(new int[] {3,3,5,0,0,3,1,4}));
+
     }
 }
-
+    
 class Solution {
     public int maxProfit(int[] prices) {
         int buy1 = Integer.MIN_VALUE;
@@ -24,10 +28,113 @@ class Solution {
     }
 }
 
+class Solution1{
+    public int maxProfit(int[] prices) {
+        int firstBuy = Integer.MAX_VALUE;
+        int secondBuy = Integer.MAX_VALUE;
+        int firstSell = 0;
+        int secondSell = 0;
+
+        for(int i = 0; i < prices.length; i++)
+        {
+            firstBuy = Math.min(firstBuy,prices[i]);
+            firstSell = Math.max(firstSell,prices[i] - firstBuy);
+            secondBuy = Math.min(secondBuy,prices[i] - firstSell);
+            secondSell = Math.max(secondSell, prices[i] - secondBuy);
+
+    System.out.println(firstBuy+","+firstSell+","+secondBuy+","+secondSell);
+        } 
+    // 
+        return secondSell;
+    }
+}
                      
 
     
 
             
+
+                         
+
+    
+
+            
+
+                         
+
+    
+
+            
+
+                         
+
+    
+
+            
+
+                           
+
+                     
+
+    
+
+            
+
+                         
+
+    
+
+            
+
+        
+
+    
+
+            
+
+                         
+
+    
+
+            
+
+                         
+
+    
+
+            
+
+                 
+       
+       
+       
+       
+       
+
+     
+       
+       
+       
+       
+       
+       
+        
+       
+       
+
+    
+       
+
+    
+     
+
+    
+    
+             
+
+          
+          
+  
+         
 
         
