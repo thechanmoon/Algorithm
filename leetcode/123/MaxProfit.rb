@@ -17,6 +17,8 @@ def max_profit(prices)
             firstSell = [firstSell,prices[i] - firstBuy].max;
             secondBuy = [secondBuy,prices[i] - firstSell].min;
             secondSell = [secondSell, prices[i] - secondBuy].max;
+            puts(firstBuy,firstSell,secondBuy,secondSell);
+            puts("");
         end 
         secondSell;
 end
