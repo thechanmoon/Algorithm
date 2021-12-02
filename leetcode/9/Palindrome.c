@@ -14,10 +14,11 @@ bool isPalindrome(int x){
         x = x/10;
     }
     
-    if(x == revertedNum || x == (revertedNum /10))
-       return true;
+    return (x == revertedNum || x == (revertedNum /10));
+    // if(x == revertedNum || x == (revertedNum /10))
+    //    return true;
        
-    return false;   
+    // return false;   
 }
 
 int main()

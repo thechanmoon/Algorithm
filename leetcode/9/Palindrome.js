@@ -39,10 +39,11 @@ var isPalindrome = function(x) {
         // console.log("revertedNum = " + revertedNum);
     }
     
-    if(x == revertedNum || x == Math.floor(revertedNum/10))
-        return true;
+    return (x == revertedNum || x == Math.floor(revertedNum/10));
+    // if(x == revertedNum || x == Math.floor(revertedNum/10))
+        // return true;
     
-    return false;
+    // return false;
 };
 
 // console.log(isPalindrome(10));

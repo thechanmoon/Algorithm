@@ -52,6 +52,6 @@ class Solution1 {
         System.out.println("x : " + x);
         System.out.println("revertedNumber : " + revertedNumber);
 
-        return (x == revertedNumber || x == revertedNumber / 10) ? true : false;
+        return (x == revertedNumber || x == revertedNumber / 10);
     }
 }
