@@ -6,6 +6,13 @@
    "configurations": [
     {
         "type": "java",
+        "name": "Launch Palindrome",
+        "request": "launch",
+        "mainClass": "Palindrome",
+        "projectName": ""
+    },
+    {
+        "type": "java",
         "name": "Launch RemoveNode",
         "request": "launch",
         "mainClass": "RemoveNode",

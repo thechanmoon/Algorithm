@@ -52,5 +52,6 @@ int main()
     vect.push_back(4);
 
     cout << sl.maxProfit(vect);
+    return 0;
 }
 //gcc -o MaxProfitCpp MaxProfit.cpp -lstdc++
