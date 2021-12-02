@@ -8,19 +8,19 @@ class Palindrome {
     }
 }
 
-// class Solution {
-// public boolean isPalindrome(int x) {
-// char[] ch = String.valueOf(x).toCharArray();
-// int mid = ch.length / 2;
-// for (int i = 0; i < mid; i++) {
-// System.out.println(ch[i] + "," + ch[ch.length - 1 - i]);
-// if (ch[i] != ch[ch.length - 1 - i]) {
-// return false;
-// }
-// }
-// return true;
-// }
-// }
+class Solution {
+    public boolean isPalindrome(int x) {
+        char[] ch = String.valueOf(x).toCharArray();
+        int mid = ch.length / 2;
+        for (int i = 0; i < mid; i++) {
+            System.out.println(ch[i] + "," + ch[ch.length - 1 - i]);
+            if (ch[i] != ch[ch.length - 1 - i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
 
 class Solution1 {
     public boolean isPalindrome(int x) {
