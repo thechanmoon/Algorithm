@@ -2,16 +2,14 @@ class Solution(object):
     def isPalindrome(self, x):
         if x < 0 or (x % 10 == 0 and x != 0):
             return False
-        # if x < 10:
-        #     return True
-        res = x
-        tmp = 0
 
-        while res != 0:
-            tmp = tmp * 10 + res % 10
-            res //= 10
+        revertedNum = 0
+
+        while x > revertedNum:
+            revertedNum = revertedNum * 10 + x % 10
+            x //= 10
         
-        return tmp == x
+        return x == revertedNum or x == revertedNum /10 
 
 
 print(Solution().isPalindrome(101));
