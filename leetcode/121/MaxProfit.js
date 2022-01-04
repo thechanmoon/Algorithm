@@ -138,17 +138,43 @@
  * @param {number[]} prices
  * @return {number}
  */
-var maxProfit = function(prices) {
-        let min_price = Number.MAX_VALUE;
-        let max_profit = 0;
+// var maxProfit = function(prices) {
+//         let min_price = Number.MAX_VALUE;
+//         let max_profit = 0;
     
-        console.log(min_price);
-        for(let i = 0; i < prices.length; i++){
-            min_price = Math.min(min_price, prices[i]);
-            max_profit = Math.max(max_profit, prices[i]-min_price);
+//         // console.log(min_price);
+//         for(let i = 0; i < prices.length; i++){
+//             min_price = Math.min(min_price, prices[i]);
+//             max_profit = Math.max(max_profit, prices[i]-min_price);
+//         }
+        
+//         return max_profit;
+// };
+
+/**
+ * @param {number[]} prices
+ * @return {number}
+ */
+var maxProfit = function(prices) {
+    let minprice = Number.MAX_SAFE_INTEGER;
+    let maxprofit = 0;
+    let i = 0;
+    while(i < prices.length){
+        
+              
+        if(prices[i] < minprice )
+        {
+            minprice =  prices[i];
         }
         
-        return max_profit;
+        if(maxprofit < prices[i] - minprice)
+        {
+            maxprofit = prices[i] - minprice;
+        }
+        i++;
+    }
+            
+    return maxprofit;    
 };
 
 console.log(maxProfit([ 7, 1, 5, 3, 6, 4]));
