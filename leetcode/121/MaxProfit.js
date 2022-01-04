@@ -155,27 +155,62 @@
  * @param {number[]} prices
  * @return {number}
  */
-var maxProfit = function(prices) {
-    let minprice = Number.MAX_SAFE_INTEGER;
-    let maxprofit = 0;
-    let i = 0;
-    while(i < prices.length){
+// var maxProfit = function(prices) {
+//     let minprice = Number.MAX_SAFE_INTEGER;
+//     let maxprofit = 0;
+//     let i = 0;
+//     while(i < prices.length){
         
               
-        if(prices[i] < minprice )
-        {
-            minprice =  prices[i];
-        }
+//         if(prices[i] < minprice )
+//         {
+//             minprice =  prices[i];
+//         }
         
-        if(maxprofit < prices[i] - minprice)
-        {
-            maxprofit = prices[i] - minprice;
-        }
-        i++;
+//         if(maxprofit < prices[i] - minprice)
+//         {
+//             maxprofit = prices[i] - minprice;
+//         }
+//         i++;
+//     }
+            
+//     return maxprofit;    
+// };
+
+/**
+ * @param {number[]} prices
+ * @return {number}
+ */
+/**
+ * @param {number[]} prices
+ * @return {number}
+ */
+ var maxProfit = function(prices) {
+    let minprice = Number.MAX_SAFE_INTEGER;
+    let maxprofit = 0;
+    
+    for(let i = 0; i < prices.length; i++){  
+        
+//         let profit = prices[i] - minprice;
+        
+//         if( minprice > prices[i] )
+//         {
+//             minprice =  prices[i];
+//         }
+        
+//         if( maxprofit < profit)
+//         {
+//             maxprofit = profit;
+//         }
+        
+        minprice = Math.min(minprice,prices[i]);
+        maxprofit = Math.max(maxprofit,prices[i]-minprice);
+
+        // console.log(minprice,maxprofit);
     }
             
     return maxprofit;    
 };
 
-console.log(maxProfit([ 7, 1, 5, 3, 6, 4]));
-console.log(maxProfit([ 7, 6, 5, 4, 3, 1]));
+console.log(maxProfit([ 7, 3, 5, 1, 6, 4]));
+// console.log(maxProfit([ 7, 6, 5, 4, 3, 1]));
