@@ -49,11 +49,11 @@ var maxProfit1 = function(prices) {
 
             // console.log("prices["+i+"]," + "firstBuy"+","+"firstSell"+","+"secondBuy"+","+"secondSell");
             // console.log(prices[i] +"         " + firstBuy+",        "+firstSell+",       "+secondBuy+",        "+secondSell);
-            console.log(firstBuy +"," + firstSell+","+secondBuy+","+secondSell);
+            //console.log(firstBuy +"," + firstSell+","+secondBuy+","+secondSell);
             // console.log("====================================");
         } 
     // 
-        return Math.max(secondSell);
+        return Math.max(firstSell,secondSell);
 };
 
 var maxProfit2 = function(prices) {
@@ -65,7 +65,7 @@ var maxProfit2 = function(prices) {
         let ss = 0;
 
 
-        console.log("Number.MIN_VALUE : " + Number.NEGATIVE_INFINITY);
+        // console.log("Number.MIN_VALUE : " + Number.NEGATIVE_INFINITY);
 
         for(let i = 0; i < prices.length; i++)
         {
@@ -73,15 +73,38 @@ var maxProfit2 = function(prices) {
             fs = Math.max(fs, fb + prices[i]) ;
             sb = Math.max(sb, fs - prices[i]);
             ss = Math.max(ss, sb + prices[i]);
-            console.log(fb +"," + fs+","+sb+","+ss);
+            // console.log(fb +"," + fs+","+sb+","+ss);
         } 
     // 
         return ss;
 };
 
+/**
+ * @param {number[]} prices
+ * @return {number}
+ */
+var maxProfit3 = function(prices) {
+    let firstBuy = Number.MAX_VALUE;
+    let secondBuy = Number.MAX_VALUE;
+    let firstSell = 0;
+    let secondSell = 0;
+
+    for(let i = 0; i < prices.length; i++)
+    {
+        firstBuy = Math.min(firstBuy,prices[i]);
+        firstSell = Math.max(firstSell,prices[i] - firstBuy);
+        secondBuy = Math.min(secondBuy,prices[i] - firstSell);
+        secondSell = Math.max(secondSell, prices[i] - secondBuy);
+
+        console.log("prices[",i,"] = ", prices[i], " => ",firstBuy,firstSell,secondBuy,secondSell);
+    } 
+    return secondSell;
+};
+
 
 console.log(maxProfit1([3, 3, 5, 0, 0, 3, 1, 4 ]));
 console.log(maxProfit2([3, 3, 5, 0, 0, 3, 1, 4 ]));
+console.log(maxProfit3([3, 3, 5, 0, 0, 3, 1, 4 ]));
 /*
 prices[0],firstBuy,firstSell,secondBuy,secondSell
 3         3,        0,       3,        0
