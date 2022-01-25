@@ -8,7 +8,7 @@ class Solution(object):
         hashmap = {}
         for i, value in enumerate(nums):
            
-            if target - nums[i] in hashmap:
-                return [i, hashmap[target - nums[i]]]
+            if target - value in hashmap:
+                return [hashmap[target - value], i]
             
             hashmap[value] = i 
