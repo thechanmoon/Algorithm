@@ -12,3 +12,6 @@ class Solution(object):
                 return [hashmap[target - value], i]
             
             hashmap[value] = i 
+
+sl = Solution();
+print(sl.twoSum([2,7,11,15],9));
