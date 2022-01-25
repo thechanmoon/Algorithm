@@ -71,8 +71,7 @@ class Solution {
             {
                 System.out.println("temp : " + temp);
                 System.out.println(temp.val);
-                temp = temp.next;
-                
+                temp = temp.next;                
             }   
             System.out.println("=========="); 
         }
