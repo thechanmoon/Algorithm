@@ -1,51 +1,57 @@
+import java.util.*;
+
 class Main {
     public static void main(String[] args) {
-        // Solution sl = new Solution();
-        // // System.out.println(sl.calculate("3+2*2"));
+        Solution sl = new Solution();
+        System.out.println(sl.calculate("3+2*2"));
+        System.out.println(sl.calculate("4+3*2"));
 
         // Solution1 sl_1 = new Solution1();
         // System.out.println(sl_1.calculate("3+2*2"));
 
-        Solution1 sl_1 = new Solution1();
-        System.out.println(sl_1.calculate("4+3*2"));
+        //Solution1 sl_1 = new Solution1();
+        //System.out.println(sl_1.calculate("4+3*2"));
     }
 }
 
-// class Solution {
-// public int calculate(String s) {
+class Solution {
+    public int calculate(String s) {
 
-// if (s == null || s.isEmpty()) return 0;
-// int len = s.length();
-// Stack<Integer> stack = new Stack<Integer>();
-// int currentNumber = 0;
-// char operation = '+';
-// for (int i = 0; i < len; i++) {
-// char currentChar = s.charAt(i);
-// if (Character.isDigit(currentChar)) {
-// currentNumber = (currentNumber * 10) + (currentChar - '0');
-// }
-// if (!Character.isDigit(currentChar) && !Character.isWhitespace(currentChar)
-// || i == len - 1) {
-// if (operation == '-') {
-// }
-// else if (operation == '+') {
-// }
-// else if (operation == '*') {
-// }
-// else if (operation == '/') {
-// stack.push(stack.pop() / currentNumber);
-// }
-// operation = currentChar;
-// currentNumber = 0;
-// }
-// }
-// int result = 0;
-// while (!stack.isEmpty()) {
-// result += stack.pop();
-// }
-// return result;
-// }
-// }
+        if (s == null || s.isEmpty())
+            return 0;
+        int len = s.length();
+        Stack<Integer> stack = new Stack<Integer>();
+        int currentNumber = 0;
+        char operation = '+';
+        for (int i = 0; i < len; i++) {
+            char currentChar = s.charAt(i);
+            if (Character.isDigit(currentChar)) {
+                currentNumber = (currentNumber * 10) + (currentChar - '0');
+            }
+            if (!Character.isDigit(currentChar) && !Character.isWhitespace(currentChar) || i == len - 1) {
+                if (operation == '-') {
+                    stack.push(-currentNumber);
+                } else if (operation == '+') {
+                    stack.push(currentNumber);
+                } else if (operation == '*') {
+                    stack.push(stack.pop() * currentNumber);
+                } else if (operation == '/') {
+                    stack.push(stack.pop() / currentNumber);
+                }
+                operation = currentChar;
+                currentNumber = 0;
+            }
+        }
+        int result = 0;
+        while (!stack.isEmpty()) {
+            result += stack.pop();
+        }
+        return result;
+    }
+
+}
+
+    
 
 class Solution1 {
     public int calculate(String s) {
