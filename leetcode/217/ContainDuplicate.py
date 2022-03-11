@@ -14,20 +14,44 @@ from typing import List
 #         return False
 
 
+# class Solution(object):
+#     def containsDuplicate(self, nums):
+#         """
+#         :type nums: List[int]
+#         :rtype: bool
+#         """
+#         hash = {}
+#         for i, num in enumerate(nums):
+#             if nums[i] in hash:
+#                 return True
+#             else:
+#                 hash[nums[i]] = num
+#         return False
+
 # class Solution:
 #     def containsDuplicate(self, nums: List[int]) -> bool:
 #         hash = {}
-#         for i, num in enumerate(nums):
+#         for num in nums:
 #             if num in hash:
 #                 return True
 #             else:
-#                 hash[num] = True
+#                 hash[num] = num
 #         return False
 
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
+        hash = {}
+        for num in nums:
+            if num in hash:
+                return True
+            else:
+                hash[num] = num
+        return False
 
-        return len(set(nums)) != len(nums)
+# class Solution:
+#     def containsDuplicate(self, nums: List[int]) -> bool:
+
+#         return len(set(nums)) != len(nums)
 
 
 sl = Solution()
