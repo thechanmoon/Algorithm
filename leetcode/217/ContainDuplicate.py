@@ -14,15 +14,20 @@ from typing import List
 #         return False
 
 
+# class Solution:
+#     def containsDuplicate(self, nums: List[int]) -> bool:
+#         hash = {}
+#         for i, num in enumerate(nums):
+#             if num in hash:
+#                 return True
+#             else:
+#                 hash[num] = True
+#         return False
+
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
-        hash = {}
-        for i, num in enumerate(nums):
-            if num in hash:
-                return True
-            else:
-                hash[num] = True
-        return False
+
+        return len(set(nums)) != len(nums)
 
 
 sl = Solution()
