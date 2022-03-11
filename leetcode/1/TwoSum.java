@@ -3,32 +3,33 @@ import java.util.*;
 class TwoSum {
 
     // public static String myJoin7(int[] arr, String separator) {
-    //     if (null == arr || 0 == arr.length)
-    //         return "";
+    // if (null == arr || 0 == arr.length)
+    // return "";
 
-    //     StringBuilder sb = new StringBuilder(256);
-    //     sb.append(arr[0]);
+    // StringBuilder sb = new StringBuilder(256);
+    // sb.append(arr[0]);
 
-    //     // if (arr.length == 1) return sb.toString();
+    // // if (arr.length == 1) return sb.toString();
 
-    //     for (int i = 1; i < arr.length; i++)
-    //         sb.append(separator).append(arr[i]);
+    // for (int i = 1; i < arr.length; i++)
+    // sb.append(separator).append(arr[i]);
 
-    //     return sb.toString();
+    // return sb.toString();
     // }
 
     // public static String myJoin8(int[] arr, String separator) {
-    //     String[] strArr = Arrays.stream(arr).mapToObj(String::valueOf).toArray(String[]::new);
-    //     String result = String.join(separator, strArr);
-    //     return result;
+    // String[] strArr =
+    // Arrays.stream(arr).mapToObj(String::valueOf).toArray(String[]::new);
+    // String result = String.join(separator, strArr);
+    // return result;
     // }
 
     // public static void arrayPrint7(int[] arr, String separator) {
-    //     System.out.println(myJoin7(arr, separator));
+    // System.out.println(myJoin7(arr, separator));
     // }
 
     // public static void arrayPrint8(int[] arr, String separator) {
-    //     System.out.println(myJoin8(arr, separator));
+    // System.out.println(myJoin8(arr, separator));
     // }
 
     public static void main(String[] args) {
@@ -44,8 +45,14 @@ class Solution {
     public int[] twoSum(int[] nums, int target) {
         HashMap<Integer, Integer> hashmap = new HashMap<Integer, Integer>();
         for (int i = 0; i < nums.length; i++) {
-            if (hashmap.containsKey(target - nums[i]))
+            // hashmap has key (target - nums[i])
+            if (hashmap.containsKey(target - nums[i])) {
+                // makes array of indexes.
                 return new int[] { hashmap.get((target - nums[i])), i };
+            }
+            // key = nums[i] (value)
+            // value = i (index)
+            // put value (index) with key (nums[i]) to the HashMap
             hashmap.put(nums[i], i);
         }
         return null;

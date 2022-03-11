@@ -1,3 +1,8 @@
+#include <iostream>
+#include <vector>
+#include <map>
+using namespace std;
+
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
@@ -11,3 +16,18 @@ public:
         return {};
     }
 };
+
+
+int main()
+{
+    Solution sl;
+
+    vector<int> nums = {2, 7, 11, 15};
+    vector<int> result = sl.twoSum(nums, 9);
+
+    for (unsigned i = 0; i < result.size(); i++)
+        cout << ' ' << result.at(i);
+    cout << "\n";
+    return 0;
+}
+//gcc -o TwoSum TwoSum.cpp -lstdc++
