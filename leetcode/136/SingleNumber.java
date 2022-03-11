@@ -4,10 +4,10 @@ import java.util.stream.*;
 // Definition for a Node.
 class SingleNumber {
     public static void main(String[] args) {
-        //Solution1 sl = new Solution1();
-         Solution6 s = new Solution6();
+        Solution1 s1 = new Solution1();
+        //  Solution6 s = new Solution6();
         //System.out.println(s1.singleNumber(new int[]{1,1}));
-         System.out.println(s.singleNumber(new int[]{2,1,2,3,1}));
+         System.out.println(s1.singleNumber(new int[]{2,1,2,3,1}));
         // System.out.println(sl.singleNumber(new int[]{1,0,1}));
         // System.out.println(sl.singleNumber(new int[]{1,3,1,-1,3}));
 
@@ -62,11 +62,40 @@ class Solution1 {
             System.out.println("nums["+i+"] = " +  +nums[i]);
             a=a^nums[i];
             System.out.println("a^"+"nums[i] = " +  +a);
-            
+            System.out.println("===============");
         }
         return a;
     }
 }
+
+/*
+2,1,2,3,1
+i : 0
+a : 0
+nums[0] = 2
+a^nums[i] = 2
+===============
+i : 1
+a : 2
+nums[1] = 1
+a^nums[i] = 3
+===============
+i : 2
+a : 3
+nums[2] = 2
+a^nums[i] = 1
+===============
+i : 3
+a : 1
+nums[3] = 3
+a^nums[i] = 2
+===============
+i : 4
+a : 2
+nums[4] = 1
+a^nums[i] = 3
+===============
+*/
 
 class Solution2 {
     public int singleNumber(int[] nums) {
