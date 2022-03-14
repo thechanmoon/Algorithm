@@ -19,7 +19,7 @@ class Solution {
         int left = 0;
         int right = nums.length - 1;
         k = k % nums.length;
-
+        System.out.println(Arrays.toString(nums));
         while (left < right) {
             temp = nums[left];
             nums[left] = nums[right];
@@ -27,7 +27,7 @@ class Solution {
             left++;
             right--;
         }
-
+        System.out.println(Arrays.toString(nums));
         left = 0;
         right = k - 1;
         while (left < right) {
@@ -37,7 +37,7 @@ class Solution {
             left++;
             right--;
         }
-
+        System.out.println(Arrays.toString(nums));
         left = k;
         right = nums.length - 1;
         while (left < right) {
@@ -47,6 +47,7 @@ class Solution {
             left++;
             right--;
         }
+        System.out.println(Arrays.toString(nums));
     }
 }
 
