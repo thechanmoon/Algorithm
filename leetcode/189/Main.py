@@ -93,30 +93,47 @@
         
 #         print (nums) 
 
-class Solution(object):
-    def swap(self, array, i,j):
-        # print(array,i,j)
-        temp = array[i]
-        array[i] = array[j]
-        array[j] = temp
-            
-    def reverse(self, array, left,right):
-        while left < right:
-            self.swap(array,left,right)
-            left = left +1
-            right = right -1    
+# class Solution(object):
+#     def rotate(self, nums, k):
+#         """
+#         :type nums: List[int]
+#         :type k: int
+#         :rtype: None Do not return anything, modify nums in-place instead.
+#         """
+#         k = k % len(nums)
+#         self.reverse (nums,0,len(nums) -1)    
+#         self.reverse (nums,0,k -1)   
+#         self.reverse (nums,k,len(nums)-1)  
+                
+#     def reverse(self, array, left,right):
+#         while left < right:
+#             self.swap(array,left,right)
+#             left = left +1
+#             right = right -1 
+    
+#     def swap(self, array, i,j):
+#         temp = array[i]
+#         array[i] = array[j]
+#         array[j] = temp
 
+class Solution(object):
     def rotate(self, nums, k):
         """
         :type nums: List[int]
         :type k: int
         :rtype: None Do not return anything, modify nums in-place instead.
         """
-        k = k % len(nums)
-        self.reverse (nums,0,len(nums) -1)    
-        self.reverse (nums,0,k -1)   
-        self.reverse (nums,k,len(nums)-1)  
-
+        k %= len(nums)
+        if k:
+            self.reverse( nums , 0 , len(nums)-1 )
+            self.reverse( nums , 0 , k-1 )
+            self.reverse( nums , k , len(nums)-1 )
+    def reverse(self,array,left,right):
+        while left<right:
+            array[left],array[right] = array[right],array[left]
+            left += 1
+            right -= 1
+                     
 array = [1,2,3,4,5,6,7]
 sl = Solution()
 sl.rotate(array,3)  
