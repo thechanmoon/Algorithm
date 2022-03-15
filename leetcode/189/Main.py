@@ -113,40 +113,11 @@ class Solution(object):
         :rtype: None Do not return anything, modify nums in-place instead.
         """
         k = k % len(nums)
-        
-        # temp = 0
-        # left = 0
-        # right = len(nums) -1
-        
-        print (nums)
-        
-        # while left < right:
-        #     self.swap(nums,left,right)
-        #     left = left+1
-        #     right = right -1
         self.reverse (nums,0,len(nums) -1)    
-        print (nums)    
-        
-        # left = 0
-        # right = k-1
-        
-        # while left < right:
-        #     self.swap(nums,left,right)
-        #     left = left+1
-        #     right = right -1
         self.reverse (nums,0,k -1)   
-        print (nums)  
-        
-        # left = k
-        # right = len(nums) -1
-        # while left < right:
-        #     self.swap(nums,left,right)
-        #     left = left+1
-        #     right = right -1
         self.reverse (nums,k,len(nums)-1)  
-        print (nums)  
 
 array = [1,2,3,4,5,6,7]
 sl = Solution()
-sl.rotate(array,3);    
+sl.rotate(array,3)  
 print(array)    
