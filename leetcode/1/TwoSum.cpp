@@ -30,4 +30,5 @@ int main()
     cout << "\n";
     return 0;
 }
-//gcc -o TwoSum TwoSum.cpp -lstdc++
+// gcc -o TwoSum TwoSum.cpp -lstdc++
+// g++ -std=c++17 -o TwoSum TwoSum.cpp
