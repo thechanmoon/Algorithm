@@ -3,12 +3,9 @@ import java.util.*;
 class Solution {
  
     public int orangesRotting(int[][] grid) {
-
         Queue<int[]> queue = new LinkedList<>();
         int[][] cor = { {0,1}, {0,-1}, {1,0}, {-1,0} };
-
         int fresh = 0, time = 0;
-
         for (int i = 0; i < grid.length; i++) {
             for (int j = 0; j < grid[0].length; j++) {
                 if (grid[i][j] == 1) {
@@ -19,7 +16,6 @@ class Solution {
                 }
             }
         }
-
         while (!queue.isEmpty() && fresh > 0) {
 
             for (int i = queue.size(); i > 0; i--) {
@@ -42,10 +38,8 @@ class Solution {
             }
             time++;
         }
-
         if(fresh<=0)
-            return time;
-        
+            return time;       
         return -1;    
     }
 }
