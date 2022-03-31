@@ -24,12 +24,12 @@ class Solution {
         while (i < n && j < n) {
 
             // System.out.println(arr[i] + " " + dep[j]);
-            if (arr[i] < dep[j]) {
+            if (arr[i] <= dep[j]) {
                 current++;
                 i++;
             }
 
-            else if (arr[i] >= dep[j]) {
+            else if (arr[i] > dep[j]) {
                 current--;
                 j++;
             }
@@ -40,3 +40,12 @@ class Solution {
         return max;
     }
 }
+
+// Complexity Analysis:
+
+// Time Complexity:
+
+// O(N * log N). 
+// One traversal O(n) of both the array is needed after sorting O(N * log N), so the time complexity is O(N * log N).
+// Space Complexity: O(1). 
+// As no extra space is required.
