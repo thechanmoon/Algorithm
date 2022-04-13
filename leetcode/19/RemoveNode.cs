@@ -9,25 +9,28 @@
  *     }
  * }
  */
-public class Solution {
-    public ListNode RemoveNthFromEnd(ListNode head, int n) {
+public class Solution
+{
+    public ListNode RemoveNthFromEnd(ListNode head, int n)
+    {
         ListNode dummy_head = new ListNode();
         dummy_head.next = head;
-        
+
         ListNode fast = dummy_head;
-        ListNode slow= dummy_head;
-        
-        for(int i = 0; i < n+1; i++)
+        ListNode slow = dummy_head;
+
+        for (int i = 0; i < n + 1; i++)
         {
-            fast= fast.next;
+            fast = fast.next;
         }
-        
-        while(fast != null){
+
+        while (fast != null)
+        {
             fast = fast.next;
             slow = slow.next;
         }
         slow.next = slow.next.next;
-        
+
         return dummy_head.next;
     }
 }
