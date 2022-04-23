@@ -1,8 +1,8 @@
 class MaxProfit {
     public static void main(String[] args) {
         Solution sl = new Solution();
-        System.out.println(sl.maxProfit(new int[] { 7, 1, 5, 3, 6, 4 }));
-        // System.out.println(sl.maxProfit(new int[] { 7, 6, 5, 4, 3, 1 }));
+        // System.out.println(sl.maxProfit(new int[] { 7, 3, 5, 1, 5, 4 }));
+        System.out.println(sl.maxProfit(new int[] { 7,1,5,3,6,4 }));
     }
 }
 
@@ -132,8 +132,13 @@ class Solution {
         for(int i = 0; i < prices.length; i++){
             min_price = Math.min(min_price, prices[i]);
             max_profit = Math.max(max_profit, prices[i]-min_price);
+            System.out.println(prices[i] + ", " + min_price + ", "+ (prices[i] - min_price) +", "  + max_profit);
         }
         
         return max_profit;
     }
 }
+// Time Complexity O(N)
+// Space Complexity O(1)
+// 7, 3, 5, 1, 5, 4
+// 7, 6, 5, 4, 3, 1
