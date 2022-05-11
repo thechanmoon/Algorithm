@@ -25,3 +25,9 @@ The number of nodes in the list is sz.
 1 <= sz <= 30
 0 <= Node.val <= 100
 1 <= n <= sz
+
+Time Complexity
+We are traversing the list only once, hence the time complexity is O(n), where n is the number of nodes in the list.
+
+Space Complexity
+We are not using any data structure for intermediate calculation, hence the space complexity will be O(1).

@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "vector": "cpp",
+        "array": "c",
+        "string_view": "c",
+        "regex": "c"
+    }
+}
