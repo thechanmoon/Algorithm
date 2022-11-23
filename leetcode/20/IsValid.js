@@ -17,7 +17,7 @@ let isValid = function(s) {
             }
         }
     }
-    return b.length===0;
+    return !b.length;
 };
 
 const isValid2 = (string) => {
@@ -51,4 +51,4 @@ const isValid2 = (string) => {
 
 //console.log(isValid('()[]{}'));
 //console.log(isValid2('()[]{}'));
-console.log(isValid2('(['));
+console.log(isValid('(['));

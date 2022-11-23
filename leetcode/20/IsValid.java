@@ -81,11 +81,39 @@ class Solution {
         //System.out.println("stack.isEmpty() = "+stack.isEmpty());
         return stack.isEmpty();
     }
+
+    public boolean isValid2(String s) {
+        HashMap<Character,Character> hashmap = new HashMap<Character,Character>();
+        Stack<Character> stack = new Stack<Character>();
+        
+        hashmap.put('(',')');
+        hashmap.put('[',']');
+        hashmap.put('{','}');
+        
+        for(int i = 0; i <s.length();i++)
+        {
+            // System.out.println("i : "+ i + stack.toString());
+            if(hashmap.containsKey(s.charAt(i))){
+                stack.push(s.charAt(i));
+                // System.out.println("b: " + stack.toString()+ "s.charAt(i) : " + s.charAt(i));
+            }   
+            else
+            {
+                // char pop = stack.pop();
+                // System.out.println("b.pop(): " + pop + "s.charAt(i) : " + s.charAt(i));
+                if(stack.isEmpty() || hashmap.get(stack.pop()) != s.charAt(i))
+                    return false;
+            }
+        }
+        return stack.isEmpty();
+    }
 }
 
 public class IsValid{
     public static void main(String[] args) {
         Solution sl = new Solution();
-        System.out.println(sl.isValid1("(])"));
+        // System.out.println(sl.isValid1("(])"));
+        // System.out.println(sl.isValid2("(])"));
+        System.out.println(sl.isValid2("()"));
     }
 }
