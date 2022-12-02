@@ -10,7 +10,7 @@ var uniqueOccurrences = function(arr) {
         obj[el] = obj[el] ? ++obj[el] : 1;
     }
     const output = Object.values(obj);
-    console.log([...obj.values()]);
+    //console.log([...obj.values()]);
 
     return output.length == new Set(output).size
 
