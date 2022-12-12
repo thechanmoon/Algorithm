@@ -37,10 +37,10 @@ class Solution {
     public int expandFromMiddle(String s, int left, int right){
         if(s == null || right > right) return 0;
 
-        while(left >= 0 && right < s.length() && s.charAt(left--)== s.charAt(right++))
+        while(left >= 0 && right < s.length() && s.charAt(left)== s.charAt(right))
         {
-            // left--;
-            // right++;
+            left--;
+            right++;
         }
 
         return right -left -1;
