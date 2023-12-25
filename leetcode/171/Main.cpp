@@ -8,11 +8,18 @@ public:
     {
         int num = 0;
         int sum = 0;
-        for (char c : columnTitle)
+        // for (char c : columnTitle)
+        // {
+        //     num = c - 'A' + 1;
+        //     sum = sum * 26 + num;
+        // }
+
+        for (int i = 0; i < columnTitle.size(); i++)
         {
-            num = c - 'A' + 1;
+            num = columnTitle[i] - 'A' + 1;
             sum = sum * 26 + num;
         }
+
         return sum;
     }
 };
