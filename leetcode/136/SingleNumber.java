@@ -4,16 +4,28 @@ import java.util.stream.*;
 // Definition for a Node.
 class SingleNumber {
     public static void main(String[] args) {
-        Solution1 s1 = new Solution1();
+        Solution s = new Solution();
         //  Solution6 s = new Solution6();
         //System.out.println(s1.singleNumber(new int[]{1,1}));
-         System.out.println(s1.singleNumber(new int[]{2,1,2,3,1}));
+         System.out.println(s.singleNumber(new int[]{2,1,2,3,1}));
         // System.out.println(sl.singleNumber(new int[]{1,0,1}));
         // System.out.println(sl.singleNumber(new int[]{1,3,1,-1,3}));
 
     }
 }
+
 class Solution {
+    public int singleNumber(int[] nums) {
+        int ret = 0;
+
+        for (int num : nums){
+            ret = ret ^ num;
+        }
+        return ret;
+    }
+}
+
+class SolutionOld {
     public int singleNumber(int[] nums) {
         
         int ret = nums[0];
