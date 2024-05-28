@@ -19,7 +19,8 @@ class Solution {
         int ret = 0;
 
         for (int num : nums){
-            ret = ret ^ num;
+            // ret = ret ^ num;
+            ret ^= num;
         }
         return ret;
     }
