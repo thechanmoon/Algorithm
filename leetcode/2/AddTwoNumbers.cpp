@@ -44,23 +44,23 @@ public:
 
 int main()
 {
-Solution sl;
+    Solution sl;
 
-ListNode* l1 = new ListNode(2);
-l1->next = new ListNode(4);
-l1->next->next = new ListNode(3);
-ListNode* l2 = new ListNode(5);
-l2->next = new ListNode(6);
-l2->next->next = new ListNode(4);
-//System.out.println(sl.addTwoNumbers(l1, l2));
-ListNode* ret = sl.addTwoNumbers(l1, l2);
-while(ret)
-{
-    cout << ret->val <<'\n';
-    ret = ret->next;
-} 
-   
-return 0;
+    ListNode* l1 = new ListNode(2);
+    l1->next = new ListNode(4);
+    l1->next->next = new ListNode(3);
+    ListNode* l2 = new ListNode(5);
+    l2->next = new ListNode(6);
+    l2->next->next = new ListNode(4);
+    //System.out.println(sl.addTwoNumbers(l1, l2));
+    ListNode* ret = sl.addTwoNumbers(l1, l2);
+    while(ret)
+    {
+        cout << ret->val <<'\n';
+        ret = ret->next;
+    } 
+    
+    return 0;
 }
 //gcc -o AddTwoNumbers AddTwoNumbers.cpp -lstdc++
 //g++ -std=c++17 -o AddTwoNumbers AddTwoNumbers.cpp
