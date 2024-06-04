@@ -1,3 +1,6 @@
+#include <iostream>
+#include <unordered_set>
+using namespace std;
 class Solution
 {
 public:
@@ -24,3 +27,14 @@ public:
         return max;
     }
 };
+
+
+int main()
+{
+    Solution sl;
+    cout << ' ' << sl.lengthOfLongestSubstring("abcabcbb");
+    cout << "\n";
+    return 0;
+}
+// gcc -o LongestSubstring LongestSubstring.cpp -lstdc++
+// g++ -std=c++17 -o LongestSubstring LongestSubstring.cpp
