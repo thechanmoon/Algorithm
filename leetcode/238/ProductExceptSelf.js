@@ -1,7 +1,8 @@
 var productExceptSelf = function(nums) {
     let left = 1;
     let right = 1;
-    let product = [];
+    //let product = [];
+    let product = new Array(nums.length).fill(1);
     
     // left side
     // [1,1,1*2,1*2*3]
