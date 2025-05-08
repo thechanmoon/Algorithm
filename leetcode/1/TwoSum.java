@@ -48,7 +48,7 @@ class Solution {
             // hashmap has key (target - nums[i])
             if (hashmap.containsKey(target - nums[i])) {
                 // makes array of indexes.
-                return new int[] { hashmap.get((target - nums[i])), i };
+                return new int[] { hashmap.get(target - nums[i]), i };
             }
             // key = nums[i] (value)
             // value = i (index)
