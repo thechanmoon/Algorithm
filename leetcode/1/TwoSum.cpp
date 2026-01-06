@@ -9,7 +9,8 @@ public:
         map<int , int> map;
         for(int i = 0; i < nums.size();i++)
         {
-            if (map.find(target - nums[i]) != map.end())
+            //if (map.find(target - nums[i]) != map.end())
+            if (map.count(target - nums[i]))
                 return {map[target-nums[i]],i};
             map[nums[i]] = i;
         }
