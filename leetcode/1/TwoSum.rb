@@ -6,7 +6,7 @@ def two_sum(nums, target)
 
     # array.each_with_index {|val, index| puts "#{val} => #{index}" }
     nums.each_with_index { |value, index|           
-        if hashmap[target - value]
+        if hashmap.key?(target - value)
             return hashmap[target - value], index
         end
         hashmap[value] = index 
