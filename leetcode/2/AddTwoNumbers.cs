@@ -26,12 +26,12 @@ public class Solution
     {
         ListNode listNode = new ListNode(0);
         ListNode cur = listNode;
-        int sum = 0;
         int carry = 0;
 
         while (l1 != null || l2 != null || carry > 0)
         {
-            sum = (l1 != null ? l1.val : 0) + (l2 != null ? l2.val : 0) + carry;
+            //int sum = (l1 != null ? l1.val : 0) + (l2 != null ? l2.val : 0) + carry;
+            int sum = (l1?.val ?? 0) + (l2?.val ?? 0) + carry;
             carry = sum / 10;
 
             cur.next = new ListNode(sum % 10);
