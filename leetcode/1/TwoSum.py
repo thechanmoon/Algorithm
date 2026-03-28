@@ -6,12 +6,13 @@ class Solution(object):
         :rtype: List[int]
         """
         hashmap = {}
-        for i, value in enumerate(nums):
-           
-            if target - value in hashmap:
-                return [hashmap[target - value], i]
+        key = 0;
+        for index, num in enumerate(nums):
+            key = target - num;
+            if key in hashmap:
+                return [hashmap[key], index]
             
-            hashmap[value] = i 
+            hashmap[num] = index 
 
 # class Solution(object):
 #     def twoSum(self, nums, target):
